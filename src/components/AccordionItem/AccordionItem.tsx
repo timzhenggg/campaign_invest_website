@@ -8,8 +8,9 @@ interface Props {
 }
 
 const CustomAccordion = styled(Accordion)({
+  position: "static",
   width: "100%",
-  padding: "12px 24px",
+  padding: "20px 24px",
   boxShadow: "none",
   "@media (max-width: 425px)": {
     padding: "16px",

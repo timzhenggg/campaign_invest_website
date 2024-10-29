@@ -1,5 +1,6 @@
 /* reset css  */
 @import url("./utils/reset.css");
+@import url("./utils/accordion.css");
 
 /* tailwind css */
 @tailwind base;

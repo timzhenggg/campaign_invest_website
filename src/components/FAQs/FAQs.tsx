@@ -12,7 +12,7 @@ const FAQs: React.FC = () => {
 
   return (
     <div className='flex flex-col gap-8'>
-      <SectionHeading className='text-center'>FAQs</SectionHeading>
+      <SectionHeading className='text-center font-medium'>FAQs</SectionHeading>
       <div className='flex items-center gap-5'>
         {["Category 1", "Category 2", "Category 3"].map((category, index) =>
         <button
