@@ -59,7 +59,7 @@ const StatsCard: React.FC<Props> = ({
   }, [isVisible, targetValue]);
 
   return (
-    <div ref={cardRef} className='p-4 border border-solid border-white rounded-xl flex flex-col'>
+    <div ref={cardRef} className='min-w-[130px] p-4 border border-solid border-white rounded-xl flex flex-col'>
       <img src={iconPath} alt={iconAlt} draggable={false} className='size-12' />
       <span className='text-white text-3xl font-bold'>{textBeforeValue}{displayValue}{textAfterValue}</span>
       <p className='text-white'>{description}</p>
