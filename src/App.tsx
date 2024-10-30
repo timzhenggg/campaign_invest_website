@@ -6,6 +6,7 @@ import Header from "./components/Header/Header"
 import HeroSection from "./components/HeroSection/HeroSection"
 import Logos from "./components/Logos/Logos"
 import Stats from "./components/Stats/Stats"
+import TechStack from "./components/TechStackSection/TechStackSection"
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BonusesSection />
       <CEOInsights />
       <Logos />
+      <TechStack />
       <FAQs /> 
     </>
   )
