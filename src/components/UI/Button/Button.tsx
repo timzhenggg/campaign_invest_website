@@ -10,7 +10,7 @@ interface Props {
 const Button: React.FC<Props> = ({children, className, disabled}) => {
   return (
     <button
-      className={clsx('px-6 py-5 text-white leading-[140%] font-extrabold bg-primary-green', className)}
+      className={clsx('px-6 py-5 bg-primary-green rounded-[100px] text-white leading-[140%] font-extrabold', className)}
       disabled={disabled}
     >
       {children}
