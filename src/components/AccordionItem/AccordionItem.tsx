@@ -47,8 +47,8 @@ const AccordionItem: FC<Props> = ({ item }) => {
 
   const [expanded, setExpanded] = useState<boolean>(false);
   
-  const handleAccordionChange = (event: any, isExpanded: boolean) => {
-    setExpanded(isExpanded);
+  const handleAccordionChange = () => {
+    setExpanded(prev => !prev);
   };
 
   return (

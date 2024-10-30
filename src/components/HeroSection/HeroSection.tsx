@@ -1,5 +1,5 @@
 import React from 'react';
-import { joiResolver } from "@hookform/resolvers/joi";
+// import { joiResolver } from "@hookform/resolvers/joi";
 import {useForm} from "react-hook-form";
 import AutotechAward from '../AutotechAward/AutotechAward';
 import InputField from '../UI/InputField/InputField';
@@ -9,8 +9,8 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 const HeroSection: React.FC = () => {
    const {
     register,
-    handleSubmit,
-    formState: {errors, isValid},
+    // handleSubmit,
+    formState: {errors},
   } = useForm<{email: string}>({
     mode: "all",
     // resolver: joiResolver(),
