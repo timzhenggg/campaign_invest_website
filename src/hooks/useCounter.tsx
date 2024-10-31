@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useCounter = (target: number, duration: number = 2000, timerInMs = 50, isVisible: boolean) => {
+const useCounter = (target: number, duration: number = 2000, timerInMs = 50, isVisible: boolean | number) => {
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {

@@ -12,19 +12,21 @@ import TechStack from "./components/TechStackSection/TechStackSection"
 
 function App() {
   return (
-    <>
+    <div>
       <Header />
-      <HeroSection />
-      <InternationalExpansionSection />
-      <SteadyGrowth />
-      <AutomotiveTechnology />
-      <Stats />
-      <BonusesSection />
-      <CEOInsights />
-      <Logos />
-      <TechStack />
-      <FAQs /> 
-    </>
+
+      <main>
+        <HeroSection />
+        <InternationalExpansionSection />
+        <SteadyGrowth />
+        <AutomotiveTechnology />
+        <BonusesSection />
+        <CEOInsights />
+        <Logos />
+        <TechStack />
+        <FAQs /> 
+      </main>
+    </div>
   )
 }
 

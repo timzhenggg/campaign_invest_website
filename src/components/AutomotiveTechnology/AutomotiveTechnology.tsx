@@ -8,19 +8,19 @@ const AutomotiveTechnology: React.FC = () => {
   const technologyCards = Array(8).fill(null);
 
   return (
-    <section className='w-full'>
+    <section className='py-14 w-full'>
       <MaxWidthContainer>
         <div className='flex flex-col gap-10'>
           <div className='flex flex-col items-center gap-1'>
-            <SectionHeading className='font-bold'>Best Micro-EV on the market</SectionHeading>
-            <p className='text-primary-text text-xl'>Eli ZERO is built to be the best micro-EV on the market, in the EU-L6e and US-LSV category</p>
+            <SectionHeading className='font-bold text-center'>Best Micro-EV on the market</SectionHeading>
+            <p className='text-primary-text text-lg md:text-xl text-center'>Eli ZERO is built to be the best micro-EV on the market, in the EU-L6e and US-LSV category</p>
           </div>
 
-          <div className="grid gap-4 grid-cols-4">
-            <div className="col-span-3">
+          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="sm:col-span-3">
               <PremiumFeatures />
             </div>
-            <div className="col-span-1">
+            <div className="sm:col-span-1">
               <TechnologyCard />
             </div>
 

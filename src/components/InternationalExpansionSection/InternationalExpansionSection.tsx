@@ -18,7 +18,7 @@ const InternationalExpansionSection: React.FC = () => {
 
           <div className='mt-12 flex flex-col gap-3.5'>
             <SuccessfulProduction />
-            <div className='h-[370px] grid grid-cols-3 gap-3.5'>
+            <div className='min-h-[370px] grid lg:grid-cols-3 gap-3.5'>
               <NewPartnerships /> 
               <MarketShare /> 
               <EliStores /> 

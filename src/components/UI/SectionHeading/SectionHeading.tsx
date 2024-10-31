@@ -9,7 +9,7 @@ interface Props {
 
 const SectionHeading: React.FC<Props> = ({children, className, color = "text-primary-text"}) => {
   return (
-    <h2 className={clsx('text-5xl', color, className)}>{children}</h2>
+    <h2 className={clsx('text-3xl md:text-4xl lg:text-5xl', color, className)}>{children}</h2>
   );
 };
 

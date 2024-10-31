@@ -2,7 +2,7 @@ import React from 'react';
 
 const TechnologyCard: React.FC = () => {
   return (
-    <div className='relative min-w-[300px] min-h-[240px] w-full h-full rounded-2xl overflow-hidden'>
+    <div className='relative w-full min-h-[240px] h-full rounded-2xl overflow-hidden'>
       <img
         className='absolute inset-0 w-full h-full object-cover'
         src="/vegan-leather-seats.png"

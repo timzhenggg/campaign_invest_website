@@ -37,10 +37,10 @@ const Congrats: React.FC<Props> = ({ category }) => {
         boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         background: 'linear-gradient(90deg, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.2) 100%)',
       }}
-      className='max-w-[430px] min-h-[400px] px-6 py-14 rounded-3xl flex flex-col justify-between'
+      className='max-w-[430px] min-h-[350px] sm:min-h-[400px] px-4 md:px-6 py-8 md:py-14 rounded-3xl flex flex-col justify-between'
     >
-      <p className='text-3xl text-white font-extrabold'>{congratsMessage}</p>
-      <span className='text-2xl text-white leading-[140%]'>{mainDescription}</span>
+      <p className='text-2xl md:text-3xl text-white font-extrabold'>{congratsMessage}</p>
+      <span className='text-xl md:text-2xl text-white leading-[140%]'>{mainDescription}</span>
 
       {(bonusesLabel && bonusesPercent) && <div
         style={{ 
@@ -48,11 +48,11 @@ const Congrats: React.FC<Props> = ({ category }) => {
         }} 
         className='py-4 px-6 rounded-2xl border border-solid border-white flex items-center justify-between gap-2'
       >
-        <span className='text-3xl font-extrabold text-primary-green'>{bonusesPercent}</span>
-        <span className='max-w-[150px] text-xl text-white'>{bonusesLabel}</span>
+        <span className='text-2xl md:text-3xl text-center font-extrabold text-primary-green'>{bonusesPercent}</span>
+        <span className='max-w-[150px] text-lg md:text-xl text-white'>{bonusesLabel}</span>
       </div>}
       {(!bonusesLabel && !bonusesPercent) &&
-        <span className='text-2xl text-white leading-[140%]'>Be a part of the mobility revolution and become an Eli shareholder.</span>}
+        <span className='text-xl md:text-2xl text-white leading-[140%]'>Be a part of the mobility revolution and become an Eli shareholder.</span>}
     </div>
   );
 };
