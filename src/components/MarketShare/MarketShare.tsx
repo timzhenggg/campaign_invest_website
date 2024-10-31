@@ -5,7 +5,7 @@ import useCounter from '../../hooks/useCounter';
 const MarketShare: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
-  const counter = useCounter(45, 2000, 60); 
+  const counter = useCounter(45, 2000, 60, isInView); 
 
   return (
     <div 

@@ -7,6 +7,7 @@ import HeroSection from "./components/HeroSection/HeroSection"
 import InternationalExpansionSection from "./components/InternationalExpansionSection/InternationalExpansionSection"
 import Logos from "./components/Logos/Logos"
 import Stats from "./components/Stats/Stats"
+import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth"
 import TechStack from "./components/TechStackSection/TechStackSection"
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <HeroSection />
       <InternationalExpansionSection />
+      <SteadyGrowth />
       <AutomotiveTechnology />
       <Stats />
       <BonusesSection />

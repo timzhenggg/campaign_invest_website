@@ -13,6 +13,8 @@ module.exports = {
         "gray-100": "#BBBBBB",
         "gray-200": "#202020",
         "gray-300": "#4D4D4D",
+        "gray-400": "#3C3C3C",
+        "white-200": "#F7F7F7"
       }
     },
   },
