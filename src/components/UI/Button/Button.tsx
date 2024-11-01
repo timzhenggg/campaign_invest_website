@@ -13,7 +13,11 @@ const Button: React.FC<Props> = ({children, className, disabled, type = "button"
   return (
     <button
       type={type}
-      className={clsx('px-6 py-5 bg-primary-green rounded-[100px] text-white leading-[140%] font-extrabold', className)}
+      className={clsx(
+        'px-6 py-5 bg-primary-green rounded-[100px] text-white leading-[140%] font-extrabold transition-all duration-300',
+        'hover:shadow-[0px_8px_12px_rgba(18,227,156,0.5)]',
+        className
+      )}
       disabled={disabled}
       onClick={onClick}
     >

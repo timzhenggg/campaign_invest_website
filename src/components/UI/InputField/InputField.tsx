@@ -19,7 +19,7 @@ const InputField = <T extends FieldValues>({
   ...rest
 }: Props<T>) => {
   return (
-    <>
+    <div className='flex flex-col items-center gap-1'>
       <input
         className={clsx('py-1 px-2 text-white/50 text-lg placeholder:text-inherit caret-white/50', className)}
         {...register(name)}
@@ -32,7 +32,7 @@ const InputField = <T extends FieldValues>({
       {requestErrorMessage && (
         <p className="text-red-500 text-sm">{requestErrorMessage}</p>
       )}
-    </>
+    </div>
   );
 };
 

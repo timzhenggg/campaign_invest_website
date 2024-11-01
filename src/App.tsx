@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react"
+import { joiResolver } from "@hookform/resolvers/joi";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import AutomotiveTechnology from "./components/AutomotiveTechnology/AutomotiveTechnology"
-import BonusesSection from "./components/BonusesSection/BonusesSection"
-import CEOInsights from "./components/CEOInsights/CEOInsights"
-import FAQs from "./components/FAQs/FAQs"
-import Footer from "./components/Footer/Footer"
-import GrowthPotentialSection from "./components/GrowthPotentialSection/GrowthPotentialSection"
-import Header from "./components/Header/Header"
-import HeroSection from "./components/HeroSection/HeroSection"
-import InternationalExpansionSection from "./components/InternationalExpansionSection/InternationalExpansionSection"
-import Logos from "./components/Logos/Logos"
-import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth"
-import TechStack from "./components/TechStackSection/TechStackSection"
 import data from "../users.json";
 import { scrollToSectionById } from "./assets/helpers/scrollToSectionById";
+import AutomotiveTechnology from "./components/AutomotiveTechnology/AutomotiveTechnology";
+import BonusesSection from "./components/BonusesSection/BonusesSection";
+import CEOInsights from "./components/CEOInsights/CEOInsights";
+import FAQs from "./components/FAQs/FAQs";
+import Footer from "./components/Footer/Footer";
+import GrowthPotentialSection from "./components/GrowthPotentialSection/GrowthPotentialSection";
+import Header from "./components/Header/Header";
+import HeroSection from "./components/HeroSection/HeroSection";
+import InternationalExpansionSection from "./components/InternationalExpansionSection/InternationalExpansionSection";
+import Logos from "./components/Logos/Logos";
+import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth";
+import TechStack from "./components/TechStackSection/TechStackSection";
+import { emailValidator } from "./validators/emailValidator";
 
 export type Category = "A" | "B" | "C" | null;
 
@@ -27,6 +29,7 @@ function App() {
     handleSubmit,
   } = useForm<{ email: string }>({
     mode: "all",
+    resolver: joiResolver(emailValidator),
   });
 
   const checkUserCategory = (email: string) => {
