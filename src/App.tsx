@@ -6,9 +6,9 @@ import Header from "./components/Header/Header"
 import HeroSection from "./components/HeroSection/HeroSection"
 import InternationalExpansionSection from "./components/InternationalExpansionSection/InternationalExpansionSection"
 import Logos from "./components/Logos/Logos"
-import Stats from "./components/Stats/Stats"
 import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth"
 import TechStack from "./components/TechStackSection/TechStackSection"
+import Footer from "./components/Footer/Footer"
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Logos />
         <TechStack />
         <FAQs /> 
+        <Footer />
       </main>
     </div>
   )

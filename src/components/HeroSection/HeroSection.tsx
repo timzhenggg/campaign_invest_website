@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
     >
       <div className='hidden xl:block mb-3 py-1 px-8 w-fit bg-black rounded-[100px] text-primary-green text-2xl font-bold'>10 Days Only</div>
 
-      <img src="/logo.svg" alt="logo" draggable={false} className="absolute w-24 top-4 lg:top-6 left-8 lg:left-14" />
+      <img src="/logo.svg" alt="logo" draggable={false} className="absolute w-24 top-4 lg:top-6 left-4 md:left-6 lg:left-14" />
 
       <div className='w-full'>
         <MaxWidthContainer>

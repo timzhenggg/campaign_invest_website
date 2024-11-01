@@ -19,7 +19,7 @@ const TechStackSection: React.FC = () => {
       </div>
 
       <div className='max-w-[1360px] mt-8 w-full flex flex-col sm:flex-row justify-around lg:justify-start items-center gap-6'>
-        <div className='w-full sm:w-auto lg:-mr-36 flex flex-col gap-6'>
+        <div className='w-full sm:w-auto lg:-mr-44 flex flex-col gap-6'>
           <TechStackCard
             title='Cabin Experience'
             listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
@@ -36,7 +36,7 @@ const TechStackSection: React.FC = () => {
 
         <img src="/tech-stack.png" alt="tech stack" draggable={false} className='hidden lg:block w-[70%] xl:w-auto' />
 
-        <div className='w-full sm:w-auto lg:-ml-36 flex flex-col gap-6'>
+        <div className='w-full sm:w-auto lg:-ml-44 flex flex-col gap-6'>
           <TechStackCard
             title='Cabin Experience'
             listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
