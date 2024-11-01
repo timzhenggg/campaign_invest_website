@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import { joiResolver } from "@hookform/resolvers/joi";
 import { useForm } from "react-hook-form";
 import AutotechAward from '../AutotechAward/AutotechAward';
@@ -8,19 +8,35 @@ import InputField from '../UI/InputField/InputField';
 import SeriesPrivateExtension from '../SeriesPrivateExtension/SeriesPrivateExtension';
 
 const HeroSection: React.FC = () => {
-   const {
+  const {
     register,
-    // handleSubmit,
-    formState: {errors},
-  } = useForm<{email: string}>({
+    formState: { errors },
+  } = useForm<{ email: string }>({
     mode: "all",
-    // resolver: joiResolver(),
   });
+
+  const [bgImageIndex, setBgImageIndex] = useState(0);
+
+  const backgroundImages = [
+    '/hero-section-bg.png',
+    '/hero-section-bg-2.png',
+  ];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setBgImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 10000);
+
+    return () => clearInterval(intervalId); 
+  }, []);
 
   return (
     <section
-      style={{ background: "url(/hero-section-bg.png) no-repeat", backgroundSize: "cover" }}
-      className='relative overflow-hidden w-full h-full min-h-[900px] flex flex-col items-center justify-center'
+      style={{
+        background: `url(${backgroundImages[bgImageIndex]}) no-repeat`,
+        backgroundSize: "cover",
+      }}
+      className='relative overflow-hidden w-full h-full min-h-[900px] flex flex-col items-center justify-center transition-all duration-1000'
     >
       <div className='hidden xl:block mb-3 py-1 px-8 w-fit bg-black rounded-[100px] text-primary-green text-2xl font-bold'>10 Days Only</div>
 
