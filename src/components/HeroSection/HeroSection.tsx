@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FieldErrors, FieldValues, UseFormRegister, Path } from "react-hook-form";
+import { FieldErrors, FieldValues, Path, UseFormRegister } from "react-hook-form";
 import AutotechAward from '../AutotechAward/AutotechAward';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SeriesPrivateExtension from '../SeriesPrivateExtension/SeriesPrivateExtension';
@@ -72,7 +72,7 @@ const HeroSection = <T extends FieldValues>({
                   <InputField
                     register={register}
                     errors={errors}
-                    name="email"
+                    name={"email" as Path<T>}
                     placeholder='Enter your Email address here'
                     className='min-w-[375px] text-center border-b border-solid border-white/50'
                   />

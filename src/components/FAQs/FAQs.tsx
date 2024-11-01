@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import React, { useMemo, useState, useEffect } from 'react';
-import { faqs1, faq2, faq3 } from '../../assets/data/faqs';
+import React, { useMemo, useState } from 'react';
+import { faq2, faq3, faqs1 } from '../../assets/data/faqs';
 import AccordionItem from '../AccordionItem/AccordionItem';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SectionHeading from '../UI/SectionHeading/SectionHeading';
