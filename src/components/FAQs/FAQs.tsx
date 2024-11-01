@@ -4,6 +4,7 @@ import { faq2, faq3, faqs1 } from '../../assets/data/faqs';
 import AccordionItem from '../AccordionItem/AccordionItem';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SectionHeading from '../UI/SectionHeading/SectionHeading';
+import { motion } from 'framer-motion';
 
 const FAQs: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("About The Current Raise");
@@ -37,32 +38,43 @@ const FAQs: React.FC = () => {
       <MaxWidthContainer>
         <div className="w-full flex flex-col gap-8">
           <SectionHeading className="text-center font-medium">FAQs</SectionHeading>
+
+          {/* Category Buttons with animation */}
           <div className="flex items-center gap-5 overflow-auto scrollbar-hidden">
             {["About The Current Raise", "About Eli Electric Vehicles", "About Regulation Crowdfunding"].map((category, index) => (
-              <button
+              <motion.button
                 key={index}
                 className={clsx(
                   "px-8 py-2.5 rounded-[100px] border-[3px] border-solid border-gray-100 text-gray-100 text-nowrap transition-all duration-300",
                   selectedCategory === category && "border-primary-green text-primary-green"
                 )}
                 onClick={() => handleCategoryChange(category)}
+                initial={{ opacity: 0, y: 20 }} // Initial state
+                animate={{ opacity: 1, y: 0 }} // Animated state
+                transition={{ duration: 0.3, delay: index * 0.1 }} // Delay for staggered effect
               >
                 {category}
-              </button>
+              </motion.button>
             ))}
           </div>
 
-          {/* list of FAQs with fade transition */}
-          <div
+          {/* List of FAQs with fade transition */}
+          <motion.div
             className={clsx(
-              "flex flex-col gap-8 md:gap-12 transition-opacity duration-300",
+              "flex flex-col gap-8 md:gap-12",
               isTransitioning ? "opacity-0" : "opacity-100"
             )}
+            initial="hidden"
+            animate={isTransitioning ? "hidden" : "visible"}
+            variants={{
+              hidden: { opacity: 0, transition: { duration: 0.3 } },
+              visible: { opacity: 1, transition: { duration: 0.3 } }
+            }}
           >
             {faqs.map(({ title, description }, index) => (
               <AccordionItem key={index} item={{ title, expanded_description: description }} />
             ))}
-          </div>
+          </motion.div>
         </div>
       </MaxWidthContainer>
     </section>

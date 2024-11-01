@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Category } from '../../App';
 import InvestIntro from '../InvestIntro/InvestIntro';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -9,21 +10,54 @@ interface Props {
   category: Category;
 }
 
-const BonusesSection: React.FC<Props> = ({category}) => {
+const BonusesSection: React.FC<Props> = ({ category }) => {
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <div id='bonuses' className='w-full bg-black py-14'>
       <MaxWidthContainer>
         <div>
-          <div className='w-full flex flex-col items-center gap-12 md:gap-16 lg:gap-20'>
-            <Stats />
-            <InvestIntro category={category} />
-          </div>
+          <motion.div
+            className='w-full flex flex-col items-center gap-12 md:gap-16 lg:gap-20'
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <motion.div variants={fadeInUp}>
+              <Stats />
+            </motion.div>
+            <motion.div variants={fadeInUp}>
+              <InvestIntro category={category} />
+            </motion.div>
+          </motion.div>
 
-          <div className='mt-4 flex flex-col items-center gap-4'>
-            <p className='text-white text-lg text-center leading-[130%]'>Join the last window to invest at 2024 stock price</p>
-            <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now </Button>
-            <span className='text-[#A4A4A4] text-lg leading-[120%] text-center'>*By regulation, bonus amount will NOT be calculated on your investment page, it will be applied AFTER your investment is completed, and reflected in the number of shares issued and average cost per share, these info will be found in your Transfer Agent account. Email <a href="mailto:ir@eli.world" className="underline">ir@eli.world</a> for questions.</span>
-          </div>
+          <motion.div
+            className='mt-4 flex flex-col items-center gap-4'
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ staggerChildren: 0.2 }}
+          >
+            <motion.p
+              className='text-white text-lg text-center leading-[130%]'
+              variants={fadeInUp}
+            >
+              Join the last window to invest at 2024 stock price
+            </motion.p>
+            <motion.div variants={fadeInUp}>
+              <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
+            </motion.div>
+            <motion.span
+              className='text-[#A4A4A4] text-lg leading-[120%] text-center'
+              variants={fadeInUp}
+            >
+              *By regulation, bonus amount will NOT be calculated on your investment page, it will be applied AFTER your investment is completed, and reflected in the number of shares issued and average cost per share. For questions, email <a href="mailto:ir@eli.world" className="underline">ir@eli.world</a>.
+            </motion.span>
+          </motion.div>
         </div>
       </MaxWidthContainer>
     </div>
