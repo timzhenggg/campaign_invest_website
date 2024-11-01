@@ -1,15 +1,32 @@
-import React, { useState } from 'react';
-import AccordionItem from '../AccordionItem/AccordionItem';
-import SectionHeading from '../UI/SectionHeading/SectionHeading';
 import clsx from 'clsx';
+import React, { useMemo, useState } from 'react';
+import { faqs1, faq2, faq3 } from '../../assets/data/faqs';
+import AccordionItem from '../AccordionItem/AccordionItem';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+import SectionHeading from '../UI/SectionHeading/SectionHeading';
 
 const FAQs: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("Category 1");
+  const [selectedCategory, setSelectedCategory] = useState<string>("About The Current Raise");
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
   };
+
+  const getFaqsList = () => {
+    switch (selectedCategory) {
+      case "About The Current Raise":
+        return faqs1;
+      case "About Eli Electric Vehicles":
+        return faq2;
+      case "About Regulation Crowdfunding":
+        return faq3;
+      
+      default:
+        return faqs1;
+    }
+  }
+
+  const faqs = useMemo(() => getFaqsList(), [getFaqsList, selectedCategory]);
 
   return (
     <section className='py-14 w-full'>
@@ -17,7 +34,7 @@ const FAQs: React.FC = () => {
         <div className='w-full flex flex-col gap-8'>
           <SectionHeading className='text-center font-medium'>FAQs</SectionHeading>
           <div className='flex items-center gap-5 overflow-auto scrollbar-hidden'>
-            {["Category 1", "Category 2", "Category 3"].map((category, index) =>
+            {["About The Current Raise", "About Eli Electric Vehicles", "About Regulation Crowdfunding"].map((category, index) =>
             <button
               key={index}
               className={clsx(
@@ -30,8 +47,8 @@ const FAQs: React.FC = () => {
 
           {/* list of FAQs */}
           <div className='flex flex-col gap-8 md:gap-12'>
-            {Array.from({ length: 10 }).map((_, index) =>
-              <AccordionItem key={index} item={{ title: "Title", expanded_description: ["Lalalalal"] }} />)}
+            {faqs.map(({title, description}, index) =>
+              <AccordionItem key={index} item={{ title, expanded_description: description }} />)}
           </div>
         </div>
       </MaxWidthContainer>
