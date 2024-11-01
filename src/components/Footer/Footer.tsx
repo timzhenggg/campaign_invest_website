@@ -2,6 +2,35 @@ import React from 'react';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 
 const Footer: React.FC = () => {
+  const socialMediaLinks = [
+    {
+      iconSrc: "/facebook-icon.svg",
+      iconAlt: "facebook icon",
+      link: "https://www.facebook.com/elielectricvehicles",
+    },
+    {
+      iconSrc: "/instagram-icon.svg",
+      iconAlt: "instagram icon",
+      link: "https://www.instagram.com/EliElectricVehicles/",
+    },
+    {
+      iconSrc: "/twitter-icon.svg",
+      iconAlt: "twitter icon",
+      link: "https://twitter.com/GoEliElectric/",
+    },
+    {
+      iconSrc: "/linkedin-icon.svg",
+      iconAlt: "linkedin icon",
+      link: "https://www.linkedin.com/company/elielectricvehicles",
+    },
+    {
+      iconSrc: "/youtube-icon.svg",
+      iconAlt: "youtube icon",
+      link: "https://www.youtube.com/@elielectricvehicles",
+    },
+  ]
+
+
   return (
     <footer className='py-14 w-full bg-primary-text'>
       <MaxWidthContainer>
@@ -10,14 +39,45 @@ const Footer: React.FC = () => {
             <img src="/logo.svg" alt="logo" draggable={false} className='w-20' />
             <nav>
               <ul className='flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8'>
-                <li className='text-white uppercase'>WHY INVEST</li>
-                <li className='text-white uppercase'>MARKET</li>
-                <li className='text-white uppercase'>EXPANSION</li>
-                <li className='text-white uppercase'>PERKS</li>
-                <li className='text-white uppercase'>FAQ</li>
+                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">WHY INVEST</li>
+                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">MARKET</li>
+                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">EXPANSION</li>
+                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">PERKS</li>
+                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">FAQ</li>
               </ul>
             </nav>
           </div>  
+
+          <div className='md:-mb-12 w-full flex flex-col sm:flex-row sm:items-end justify-between gap-6'>
+            <div className='flex items-end gap-6'>
+              <div className='flex flex-col gap-2'>
+                <img src="/email-icon.svg" alt="email icon" draggable={false} className='size-6' />
+                <div className='flex flex-col gap-2'>
+                  <span className='text-white/50'>General Inquiry:</span>
+                  <a className='text-white underline' href="mailto:hello@eli.world">hello@eli.world</a>
+                </div>
+              </div>
+              <div className='flex flex-col gap-2'>
+                <img src="/email-icon.svg" alt="email icon" draggable={false} className='size-6' />
+                <div className='flex flex-col gap-2'>
+                  <span className='text-white/50'>Investor Relations:</span>
+                  <a className='text-white underline' href="mailto:ir@eli.world">ir@eli.world</a>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <ul className='flex items-center gap-1'>
+                {socialMediaLinks.map(({iconSrc, iconAlt, link}, index) => (
+                  <li key={index}>
+                    <a href={link} target='_blank'>
+                      <img src={iconSrc} alt={iconAlt} draggable={false} className='size-6' />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
           <div className='flex flex-col gap-12 md:gap-16'>
             <div className='flex flex-col gap-6 sm:gap-8'>
