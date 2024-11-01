@@ -1,5 +1,4 @@
 import React from 'react';
-import LineChart from '../LineChart/LineChart';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import RevenueGrowth from '../RevenueGrowth/RevenueGrowth';
 import RevenueStatsCard from '../RevenueStatsCard/RevenueStatsCard';

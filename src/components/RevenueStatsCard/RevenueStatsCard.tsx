@@ -26,9 +26,12 @@ const RevenueStatsCard: React.FC<Props> = ({ title, children, value, titleClassN
           if (
             React.isValidElement(child) &&
             child.type === 'span' &&
-            child.props?.className?.includes('counter')
+            typeof child.props.className === 'string' && 
+            child.props.className.includes('counter')
           ) {
-            return React.cloneElement(child, { children: `${counter}` });
+            return React.cloneElement(child as React.ReactElement<{ children: React.ReactNode }>, {
+              children: `${counter}`, 
+            });
           }
           return child; 
         })}

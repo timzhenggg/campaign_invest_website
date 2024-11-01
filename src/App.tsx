@@ -17,12 +17,12 @@ function App() {
 
       <main>
         <HeroSection />
+        <BonusesSection />
+        <Logos />
         <InternationalExpansionSection />
         <SteadyGrowth />
-        <AutomotiveTechnology />
-        <BonusesSection />
         <CEOInsights />
-        <Logos />
+        <AutomotiveTechnology />
         <TechStack />
         <FAQs /> 
         <Footer />
