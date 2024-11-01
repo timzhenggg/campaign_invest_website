@@ -1,3 +1,5 @@
+import { useState } from "react"
+import { useForm } from "react-hook-form";
 import AutomotiveTechnology from "./components/AutomotiveTechnology/AutomotiveTechnology"
 import BonusesSection from "./components/BonusesSection/BonusesSection"
 import CEOInsights from "./components/CEOInsights/CEOInsights"
@@ -10,24 +12,64 @@ import InternationalExpansionSection from "./components/InternationalExpansionSe
 import Logos from "./components/Logos/Logos"
 import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth"
 import TechStack from "./components/TechStackSection/TechStackSection"
+import data from "../users.json";
+
+export type Category = "A" | "B" | "C" | null;
 
 function App() {
+  const [isValidUser, setIsValidUser] = useState(false);
+  const [category, setCategory] = useState<Category>(null);
+
+  const {
+    register,
+    formState: { errors, },
+    handleSubmit,
+  } = useForm<{ email: string }>({
+    mode: "all",
+  });
+
+  const checkUserCategory = (email: string) => {
+    if (data.categoryA.includes(email)) {
+      setCategory('A');
+    } else if (data.categoryB.includes(email)) {
+      setCategory('B');
+    } else if (data.categoryC.includes(email)) {
+      setCategory('C');
+    } else {
+      setCategory(null);
+    }
+    setIsValidUser(email !== '' && category !== null);
+  };
+
+  const handleSubmitEmail = (data: { email: string }) => {
+    const { email } = data;
+    checkUserCategory(email);
+  };
+
   return (
     <div>
       <Header />
 
       <main>
-        <HeroSection />
-        <BonusesSection />
-        <Logos />
-        <InternationalExpansionSection />
-        <SteadyGrowth />
-        <GrowthPotentialSection />
-        <CEOInsights />
-        <AutomotiveTechnology />
-        <TechStack />
-        <FAQs /> 
-        <Footer />
+        <HeroSection
+          name="email"
+          register={register}
+          errors={errors}
+          handleSubmit={handleSubmit(handleSubmitEmail)}
+        />
+
+        {isValidUser && <div>
+          <BonusesSection category={category} />
+          <Logos />
+          <InternationalExpansionSection />
+          <SteadyGrowth />
+          <GrowthPotentialSection />
+          <CEOInsights />
+          <AutomotiveTechnology />
+          <TechStack />
+          <FAQs /> 
+          <Footer />
+        </div>}
       </main>
     </div>
   )

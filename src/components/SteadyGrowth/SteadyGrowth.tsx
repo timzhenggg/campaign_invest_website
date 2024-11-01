@@ -3,6 +3,7 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import RevenueGrowth from '../RevenueGrowth/RevenueGrowth';
 import RevenueStatsCard from '../RevenueStatsCard/RevenueStatsCard';
 import SectionHeading from '../UI/SectionHeading/SectionHeading';
+import LineChart from '../LineChart/LineChart';
 
 const SteadyGrowth: React.FC = () => {
   return (
@@ -21,8 +22,11 @@ const SteadyGrowth: React.FC = () => {
           </div>
 
           <div className='flex flex-col sm:flex-row items-center gap-6'>
-            <div className='sm:w-1/2'>
-              {/* <LineChart /> */}
+            <div
+              className='sm:w-1/2 bg-white p-6 rounded-3xl flex justify-center items-center'
+              style={{boxShadow: '0px 4px 8px 0px #0000001A'}}
+            >
+              <LineChart />
             </div>
             <RevenueGrowth />
             <div className='sm:max-w-[280px] w-full h-full flex flex-col gap-6'>

@@ -1,9 +1,9 @@
 import React from 'react';
+import { Category } from '../../App';
 
-export type EmailCategory = "A" | "B" | "C";
 
 interface Props {
-  category: EmailCategory;
+  category: Category;
 }
 
 const Congrats: React.FC<Props> = ({ category }) => {

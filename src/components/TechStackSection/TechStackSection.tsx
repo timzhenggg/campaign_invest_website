@@ -1,6 +1,7 @@
 import React from 'react';
 import TechStackCard from '../TechStackCard/TechStackCard';
 import SectionHeading from '../UI/SectionHeading/SectionHeading';
+import { techStack } from '../../assets/data/techStack';
 
 const TechStackSection: React.FC = () => {
   return (
@@ -21,16 +22,16 @@ const TechStackSection: React.FC = () => {
       <div className='max-w-[1360px] mt-8 w-full flex flex-col sm:flex-row justify-around lg:justify-start items-center gap-6'>
         <div className='w-full sm:w-auto lg:-mr-44 flex flex-col gap-6'>
           <TechStackCard
-            title='Cabin Experience'
-            listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
+            title={techStack[0].title}
+            listOfStack={techStack[0].listOfStack}
           />
           <TechStackCard
-            title='Cabin Experience'
-            listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
+            title={techStack[1].title}
+            listOfStack={techStack[1].listOfStack}
           />
           <TechStackCard
-            title='Cabin Experience'
-            listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
+            title={techStack[2].title}
+            listOfStack={techStack[2].listOfStack}
           />
         </div>
 
@@ -38,16 +39,16 @@ const TechStackSection: React.FC = () => {
 
         <div className='w-full sm:w-auto lg:-ml-44 flex flex-col gap-6'>
           <TechStackCard
-            title='Cabin Experience'
-            listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
+            title={techStack[3].title}
+            listOfStack={techStack[3].listOfStack}
           />
           <TechStackCard
-            title='Cabin Experience'
-            listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
+            title={techStack[4].title}
+            listOfStack={techStack[4].listOfStack}
           />
           <TechStackCard
-            title='Cabin Experience'
-            listOfStack={['Audio Interaction', 'Steering Wheel', 'Infotainment Interfacing', '360 CAMERA', 'Dashboard UX', 'Vehicle Control']}
+            title={techStack[5].title}
+            listOfStack={techStack[5].listOfStack}
           />
         </div>
       </div>

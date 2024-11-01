@@ -12,7 +12,7 @@ const TechStackCard: React.FC<Props> = ({ title, listOfStack }) => {
       style={{
         background: 'linear-gradient(90deg, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.2) 100%)',
       }}
-      className='sm:max-w-[475px] w-full px-4 md:px-6 py-3 md:py-4 rounded-xl flex flex-col items-center gap-1.5'
+      className='sm:max-w-[475px] w-full min-h-[195px] px-4 md:px-6 py-3 md:py-4 rounded-xl flex flex-col items-center gap-1.5'
     >
       <h3 className='text-xl md:text-2xl font-bold text-primary-green mb-4'>{title}</h3>
 
