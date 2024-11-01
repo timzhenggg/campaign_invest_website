@@ -8,7 +8,7 @@ import EliStores from '../EliStores/EliStores';
 
 const InternationalExpansionSection: React.FC = () => {
   return (
-    <div className='py-8'>
+    <section id='expansion' className='py-8'>
       <MaxWidthContainer>
         <div className='w-full flex flex-col'>
           <div className='w-full flex flex-col items-center gap-1'>
@@ -26,7 +26,7 @@ const InternationalExpansionSection: React.FC = () => {
           </div>
         </div>
       </MaxWidthContainer>
-    </div>
+    </section>
   );
 };
 

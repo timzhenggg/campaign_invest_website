@@ -7,7 +7,7 @@ import SectionHeading from '../UI/SectionHeading/SectionHeading';
 
 const AutomotiveTechnology: React.FC = () => {
   return (
-    <section className='py-14 w-full'>
+    <section id='market' className='py-14 w-full'>
       <MaxWidthContainer>
         <div className='flex flex-col gap-10'>
           <div className='flex flex-col items-center gap-1'>

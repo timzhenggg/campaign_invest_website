@@ -1,8 +1,8 @@
 import React from 'react';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+import { scrollToSectionById } from '../../assets/helpers/scrollToSectionById';
 
-const Footer: React.FC = () => {
-  const socialMediaLinks = [
+const socialMediaLinks = [
     {
       iconSrc: "/facebook-icon.svg",
       iconAlt: "facebook icon",
@@ -28,8 +28,12 @@ const Footer: React.FC = () => {
       iconAlt: "youtube icon",
       link: "https://www.youtube.com/@elielectricvehicles",
     },
-  ]
+  ];
 
+const Footer: React.FC = () => {
+  const handleLinkClick = (id: string) => {
+    scrollToSectionById(id);
+  }
 
   return (
     <footer className='py-14 w-full bg-primary-text'>
@@ -39,11 +43,11 @@ const Footer: React.FC = () => {
             <img src="/logo.svg" alt="logo" draggable={false} className='w-20' />
             <nav>
               <ul className='flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8'>
-                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">WHY INVEST</li>
-                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">MARKET</li>
-                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">EXPANSION</li>
+                <li onClick={() => handleLinkClick('steady-growth')} className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">WHY INVEST</li>
+                <li onClick={() => handleLinkClick('market')} className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">MARKET</li>
+                <li onClick={() => handleLinkClick('expansion')} className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">EXPANSION</li>
                 <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">PERKS</li>
-                <li className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">FAQ</li>
+                <li onClick={() => handleLinkClick('faqs')} className="text-white uppercase relative hover:after:w-full after:content-[''] after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 after:-translate-x-1/2 cursor-pointer">FAQ</li>
               </ul>
             </nav>
           </div>  

@@ -1,22 +1,22 @@
 import React, { useRef } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 
 // Register the necessary components with Chart.js
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
 const LineChart: React.FC = () => {
-  const chartRef = useRef(null); // Create a reference for the chart
+  const chartRef = useRef<ChartJS | null>(null); // Create a reference for the chart
 
   const data = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'], // x-axis labels
+    labels: ['FY2021', 'FY2022', 'FY2023'], // x-axis labels
     datasets: [
       {
-        label: 'Sales Data',
-        data: [65, 59, 80, 81, 56, 55, 40], // y-axis values
+        label: 'Steady Gross Margin Growth',
+        data: [2.8, 6.4, 10.8], // y-axis values
         fill: true, // Fill the area under the line
-        backgroundColor: 'rgba(75, 192, 192, 0.5)', // Placeholder background color
-        borderColor: 'rgba(75, 192, 192, 1)', // Line color
+        backgroundColor: '#FFF', // Placeholder background color
+        borderColor: '#12E39C', // Line color
         borderWidth: 2,
         pointRadius: 5, // Size of the points
         pointHoverRadius: 7, // Size of points on hover
@@ -24,12 +24,16 @@ const LineChart: React.FC = () => {
     ],
   };
 
-  const options = {
+  // Explicitly typing the options variable
+  const options: ChartOptions<'line'> = {
     responsive: true,
     plugins: {
       legend: {
         display: true,
-        position: 'top',
+        position: 'top' as const, // Ensure this is a valid string literal
+      },
+      tooltip: {
+        enabled: true, // Enable tooltips to show data on hover
       },
     },
     scales: {
@@ -42,11 +46,14 @@ const LineChart: React.FC = () => {
         grid: {
           color: 'rgba(0, 0, 0, 0.1)', // Color for y-axis grid lines
         },
+        ticks: {
+          display: false, // Hide y-axis tick marks (1, 2, 3, etc.)
+        },
       },
     },
   };
 
-  const handleChartReady = (chart) => {
+  const handleChartReady = (chart: ChartJS) => { // Explicitly typing chart
     // Access the canvas context when the chart is ready
     const ctx = chart.ctx; // Get the canvas context
     const gradient = ctx.createLinearGradient(0, 0, 0, chart.height); // Create a vertical gradient
@@ -61,8 +68,9 @@ const LineChart: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative', height: '100%', width: '100%' }}>
+    <div className='relative w-full h-full flex justify-center items-center'>
       <Line
+        style={{ minHeight: 180 }}
         ref={chartRef}
         data={data}
         options={options}

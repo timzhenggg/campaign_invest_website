@@ -59,8 +59,6 @@ function App() {
       }, 500);
     }
   }, [isValidUser, category]);
-  console.log(isValidUser);
-  
 
   return (
     <div>

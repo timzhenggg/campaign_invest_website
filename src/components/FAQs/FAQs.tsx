@@ -33,7 +33,7 @@ const FAQs: React.FC = () => {
   const faqs = useMemo(() => getFaqsList(), [selectedCategory]);
 
   return (
-    <section className="py-14 w-full">
+    <section id='faqs' className="py-14 w-full">
       <MaxWidthContainer>
         <div className="w-full flex flex-col gap-8">
           <SectionHeading className="text-center font-medium">FAQs</SectionHeading>
