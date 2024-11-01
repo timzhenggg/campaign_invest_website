@@ -1,12 +1,11 @@
 import React from 'react';
-import TechnologyCard from '../TechnologyCard/TechnologyCard';
-import PremiumFeatures from '../PremiumFeatures/PremiumFeatures';
-import SectionHeading from '../UI/SectionHeading/SectionHeading';
+import { technologies } from '../../assets/data/technologies';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
+import PremiumFeatures from '../PremiumFeatures/PremiumFeatures';
+import TechnologyCard from '../TechnologyCard/TechnologyCard';
+import SectionHeading from '../UI/SectionHeading/SectionHeading';
 
 const AutomotiveTechnology: React.FC = () => {
-  const technologyCards = Array(8).fill(null);
-
   return (
     <section className='py-14 w-full'>
       <MaxWidthContainer>
@@ -21,12 +20,12 @@ const AutomotiveTechnology: React.FC = () => {
               <PremiumFeatures />
             </div>
             <div className="sm:col-span-1">
-              <TechnologyCard />
+              <TechnologyCard technology={technologies[0]} />
             </div>
 
-            {technologyCards.map((_, index) => (
+            {technologies.filter((item) => item.title !== "Power-assisted brake").map((technology, index) => (
               <div key={index} className="col-span-1">
-                <TechnologyCard />
+                <TechnologyCard technology={technology} />
               </div>
             ))}
           </div>
