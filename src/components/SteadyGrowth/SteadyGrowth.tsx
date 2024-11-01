@@ -23,7 +23,7 @@ const SteadyGrowth: React.FC = () => {
 
           <div className='flex flex-col sm:flex-row items-center gap-6'>
             <div
-              className='sm:w-1/2 bg-white p-6 rounded-3xl flex justify-center items-center'
+              className='sm:w-1/2 bg-white h-full p-6 rounded-3xl flex justify-center items-center'
               style={{boxShadow: '0px 4px 8px 0px #0000001A'}}
             >
               <LineChart />

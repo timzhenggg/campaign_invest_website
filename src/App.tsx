@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form";
 import AutomotiveTechnology from "./components/AutomotiveTechnology/AutomotiveTechnology"
 import BonusesSection from "./components/BonusesSection/BonusesSection"
@@ -13,6 +13,7 @@ import Logos from "./components/Logos/Logos"
 import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth"
 import TechStack from "./components/TechStackSection/TechStackSection"
 import data from "../users.json";
+import { scrollToSectionById } from "./assets/helpers/scrollToSectionById";
 
 export type Category = "A" | "B" | "C" | null;
 
@@ -29,22 +30,37 @@ function App() {
   });
 
   const checkUserCategory = (email: string) => {
+    let category;
     if (data.categoryA.includes(email)) {
+      category = "A";
       setCategory('A');
     } else if (data.categoryB.includes(email)) {
+      category = "B";
       setCategory('B');
-    } else if (data.categoryC.includes(email)) {
-      setCategory('C');
     } else {
-      setCategory(null);
+      category = "C";
+      setCategory('C');
     }
+
     setIsValidUser(email !== '' && category !== null);
   };
 
   const handleSubmitEmail = (data: { email: string }) => {
     const { email } = data;
-    checkUserCategory(email);
+    if (email) {
+      checkUserCategory(email);
+    }
   };
+
+  useEffect(() => {
+    if (isValidUser) {
+      setTimeout(() => {
+        scrollToSectionById("bonuses");
+      }, 500);
+    }
+  }, [isValidUser, category]);
+  console.log(isValidUser);
+  
 
   return (
     <div>

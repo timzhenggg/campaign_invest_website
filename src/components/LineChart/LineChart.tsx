@@ -61,12 +61,12 @@ const LineChart: React.FC = () => {
   };
 
   return (
-    <div style={{ position: 'relative', height: '400px', width: '100%' }}>
+    <div style={{ position: 'relative', height: '100%', width: '100%' }}>
       <Line
         ref={chartRef}
         data={data}
         options={options}
-        onReady={handleChartReady} // Use the onReady callback to apply the gradient
+        onReady={handleChartReady}
       />
     </div>
   );
