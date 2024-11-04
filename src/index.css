@@ -11,6 +11,11 @@
   --bg-primary-green: "#12E39C";
 }
 
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
 }

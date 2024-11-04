@@ -64,10 +64,10 @@ function App() {
   }, [isValidUser, category]);
 
   return (
-    <div>
+    <div className="w-full h-full flex flex-col flex-1">
       <Header />
 
-      <main>
+      <main className="flex flex-col flex-1">
         <HeroSection
           name="email"
           register={register}

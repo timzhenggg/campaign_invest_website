@@ -158,6 +158,11 @@ export const faq3 = [
     title: "Can I sell my shares?",
     description: [
       "Shares sold via Regulation Crowdfunding offerings have a one-year lockup period before those shares can be sold under certain conditions.",
+      "Exceptions to limitations on selling shares during the one-year lockup period:",
+      "In the event of death, divorce, or similar circumstance, shares can be transferred to:",
+      "The company that issued the securities",
+      "An accredited investor",
+      "A family member (child, stepchild, grandchild, parent, stepparent, grandparent, spouse or equivalent, sibling, mother-in-law, father-in-law, son-in-law, daughter-in-law, brother-in-law, or sister-in-law, including adoptive relationships)",
     ],
   },
   {

@@ -27,7 +27,7 @@ const CustomAccordionDetails = styled(AccordionDetails)({
   padding: "16px 0 0",
   display: "flex",
   flexDirection: "column",
-  gap: 2,
+  gap: 8,
 });
 
 const PlusIcon = () => (

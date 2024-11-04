@@ -43,7 +43,7 @@ const HeroSection = <T extends FieldValues>({
   return (
     <motion.section
       id='hero-section'
-      className='relative overflow-hidden w-full h-fit min-h-[900px] flex flex-col items-center justify-center'
+      className='relative overflow-hidden w-full h-full min-h-[900px] flex flex-col items-center justify-center'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
