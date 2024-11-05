@@ -29,7 +29,7 @@ const LineChart: React.FC = () => {
       legend: {
         display: true,
         position: 'top' as const,
-        onClick: (e) => e.stopPropagation(),
+        onClick: () => {},
         labels: {
           boxWidth: 0, // hide rectangle
           font: {
