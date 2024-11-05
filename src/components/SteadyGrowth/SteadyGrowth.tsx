@@ -7,18 +7,18 @@ import LineChart from '../LineChart/LineChart';
 
 const SteadyGrowth: React.FC = () => {
   return (
-    <section id='steady-growth' className='py-8 md:py-10 bg-white-200 w-full'>
+    <section className='py-8 md:py-10 bg-white-200 w-full'>
       <MaxWidthContainer>
         <div className='flex flex-col gap-10'>
           <div className='flex flex-col gap-8'>
-            <div className='flex flex-col items-center gap-4'>
+            <div className='flex flex-col items-center gap-4 md:gap-8'>
               <SectionHeading className='text-primary-text font-bold text-center'>
                 Steady growth 3 years in a row
               </SectionHeading>
               <p className='text-primary-text text-lg md:text-xl text-center leading-[130%]'>True growth ahead - consistent progress, building momentum year after year.</p>
             </div>
 
-            <img className='w-full rounded-b-[100px]' src="/steady-growth-bg.png" alt="steady growth" draggable={false} />
+            <img className='w-full sm:rounded-b-[100px]' src="/steady-growth-bg.png" alt="steady growth" draggable={false} />
           </div>
 
           <div className='flex flex-col sm:flex-row sm:grid grid-cols-2 xl:flex items-center gap-6'>

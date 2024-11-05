@@ -1,10 +1,11 @@
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import React, { useMemo, useState } from 'react';
 import { faq2, faq3, faqs1 } from '../../assets/data/faqs';
 import AccordionItem from '../AccordionItem/AccordionItem';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SectionHeading from '../UI/SectionHeading/SectionHeading';
-import { motion } from 'framer-motion';
+import Button from '../UI/Button/Button';
 
 const FAQs: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("About The Current Raise");
@@ -34,18 +35,22 @@ const FAQs: React.FC = () => {
   const faqs = useMemo(() => getFaqsList(), [selectedCategory]);
 
   return (
-    <section id='faqs' className="py-14 w-full">
+    <section id='faqs' className="-mt-28 py-14 w-full flex flex-col items-center gap-14">
+      <motion.div className='sm:hidden'>
+        <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
+      </motion.div>
+      
       <MaxWidthContainer>
         <div className="w-full flex flex-col gap-8">
           <SectionHeading className="text-center font-medium">FAQs</SectionHeading>
 
           {/* Category Buttons with animation */}
-          <div className="flex items-center gap-5 overflow-auto scrollbar-hidden">
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-5 overflow-auto scrollbar-hidden">
             {["About The Current Raise", "About Eli Electric Vehicles", "About Regulation Crowdfunding"].map((category, index) => (
               <motion.button
                 key={index}
                 className={clsx(
-                  "px-8 py-2.5 rounded-[100px] border-[3px] border-solid border-gray-100 text-gray-100 text-nowrap transition-all duration-300",
+                  "w-full sm:w-auto px-8 py-2.5 rounded-[100px] border-[3px] border-solid border-gray-100 text-gray-100 text-nowrap transition-all duration-300",
                   selectedCategory === category && "border-primary-green text-primary-green"
                 )}
                 onClick={() => handleCategoryChange(category)}
@@ -61,7 +66,7 @@ const FAQs: React.FC = () => {
           {/* List of FAQs with fade transition */}
           <motion.div
             className={clsx(
-              "flex flex-col gap-8 md:gap-12",
+              "flex flex-col gap-4 sm:gap-6 md:gap-12",
               isTransitioning ? "opacity-0" : "opacity-100"
             )}
             initial="hidden"

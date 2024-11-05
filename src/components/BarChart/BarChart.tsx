@@ -12,7 +12,7 @@ const BarChart: React.FC = () => {
     <div ref={ref} className='relative w-full h-full'>
       <img src="/bar-chart.svg" alt="bar chart" draggable={false} className='-mt-12' />
       
-      <span className='absolute z-10 right-[13.5%] sm:right-[15%] xl:right-[18%] top-[30%] sm:top-[42%] text-white font-bold text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl'>${counter1}B</span>
+      <span className='absolute z-10 right-[13.5%] sm:right-[15%] xl:right-[15%] top-[30%] sm:top-[42%] text-white font-bold text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl'>${counter1}B</span>
       <span className='absolute z-10 left-[15%] xs:left-[17%] sm:left-28 md:left-32 bottom-[28%] sm:bottom-24 md:bottom-28 xl:right-[18%] text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl'>${counter2}B</span>
       
       <div className='absolute left-0 top-0 hidden sm:flex flex-col items-start gap-8'>

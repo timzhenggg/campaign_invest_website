@@ -81,7 +81,7 @@ const SuccessfulProduction: React.FC = () => {
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Successful Production
+          Advanced Production
         </motion.h3>
 
         <motion.div

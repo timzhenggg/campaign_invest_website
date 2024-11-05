@@ -2,7 +2,6 @@ import { CategoryScale, Chart as ChartJS, ChartOptions, Legend, LineElement, Lin
 import React, { useRef } from 'react';
 import { Line } from 'react-chartjs-2';
 
-// Реєстрація компонентів для Chart.js
 ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
 
 const LineChart: React.FC = () => {
@@ -30,6 +29,13 @@ const LineChart: React.FC = () => {
       legend: {
         display: true,
         position: 'top' as const,
+        onClick: (e) => e.stopPropagation(),
+        labels: {
+          boxWidth: 0, // hide rectangle
+          font: {
+            size: 18,
+          },
+        },
       },
       tooltip: {
         enabled: true,

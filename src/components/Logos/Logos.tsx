@@ -21,7 +21,7 @@ const Logos = () => {
         <MaxWidthContainer>
           <div className="absolute inset-0 bg-gradient-to-r from-gray-200/90 via-transparent to-gray-200/90 z-10" />
 
-          <Marquee direction="right">
+          <Marquee direction="right" speed={25}>
             {logos.map((logoSrc, index) =>
               <img key={index} src={logoSrc} alt="logo" draggable={false} className="mr-8 md:mr-12" />)}
           </Marquee>

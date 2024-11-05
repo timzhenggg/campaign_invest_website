@@ -61,8 +61,8 @@ const StatsCard: React.FC<Props> = ({
   return (
     <div ref={cardRef} className='min-w-[130px] p-4 border border-solid border-white rounded-xl flex flex-col'>
       <img src={iconPath} alt={iconAlt} draggable={false} className='size-12' />
-      <span className='text-white text-3xl font-bold'>{textBeforeValue}{displayValue}{textAfterValue}</span>
-      <p className='text-white'>{description}</p>
+      <span className='text-white text-xl sm:text-3xl font-bold'>{textBeforeValue}{displayValue}{textAfterValue}</span>
+      <p className='text-white/50 text-sm sm:text-base'>{description}</p>
     </div>
   );
 };

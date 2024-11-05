@@ -70,7 +70,7 @@ const AccordionItem: FC<Props> = ({ item }) => {
         id="panel1-header"
       >
         <div className="w-full flex flex-col gap-4">
-          <p className="text-xl text-primary-text-100 font-medium">{title}</p>
+          <p className="sm:text-xl text-primary-text-100 font-medium">{title}</p>
         </div>
       </CustomAccordionSummary>
       <CustomAccordionDetails>

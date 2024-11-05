@@ -93,7 +93,7 @@ const HeroSection = <T extends FieldValues>({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Exclusive Private Extension Round
+                Exclusive Private Extension Round <span className='hiddenn lg:block'>Period</span>
                 <span className='font-normal'>Last Chance to Invest in 2024 Terms</span>
               </motion.h1>
               <motion.p 
@@ -145,7 +145,7 @@ const HeroSection = <T extends FieldValues>({
             </motion.div>
 
             <motion.div 
-              className='w-full sm:w-auto my-8 xl:m-0 xl:absolute top-14 -right-16 flex flex-col sm:flex-row items-center xl:items-stretch xl:flex-col gap-6'
+              className='w-full sm:w-auto my-8 xl:m-0 xl:absolute top-14 -right-16 flex flex-row items-center xl:items-stretch xl:flex-col gap-6'
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}

@@ -27,7 +27,7 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ staggerChildren: 0.2 }}
           >
-            <motion.div variants={fadeInUp}>
+            <motion.div className='w-full' variants={fadeInUp}>
               <Stats />
             </motion.div>
             <motion.div variants={fadeInUp}>
@@ -52,10 +52,12 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
               <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
             </motion.div>
             <motion.span
-              className='text-[#A4A4A4] text-lg leading-[120%] text-center'
+              className='text-[#A4A4A4] text-sm sm:text-lg leading-[120%] text-center'
               variants={fadeInUp}
             >
-              *By regulation, bonus amount will NOT be calculated on your investment page, it will be applied AFTER your investment is completed, and reflected in the number of shares issued and average cost per share. For questions, email <a href="mailto:ir@eli.world" className="underline">ir@eli.world</a>.
+              “By regulation, bonus amount will NOT
+be calculated on your investment page. It will be applied
+AFTER your investment iscompleted and reflected int he number of shares issued and average cost per share. For questions, email <a href="mailto:ir@eli.world" className="underline">ir@eli.world</a>.
             </motion.span>
           </motion.div>
         </div>

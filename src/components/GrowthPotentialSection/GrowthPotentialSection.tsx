@@ -15,12 +15,14 @@ const GrowthPotentialSection: React.FC = () => {
   const counter2 = useCounter(25, 2000, 20, isInView2);
 
   return (
-    <div className='py-14 bg-gray-200'>
+    <div id="steady-growth" className='py-14 bg-gray-200'>
       <MaxWidthContainer>
         <div className='w-full flex flex-col items-center gap-12 md:gap-16 lg:gap-20'>
           <div className='z-10 flex flex-col items-center gap-4'>
             <SectionHeading color='text-white' className='text-center font-bold'>142X Market Growth Potential</SectionHeading>
-            <p className='text-white leading-[130%] text-center text-base md:text-lg'>Higher growth multiplier than conventional EV, Micro-EV is the next big thing in urban mobility.</p>
+            <p className='text-white leading-[130%] text-center text-base md:text-lg'>Micro-EVs are the next big thing in urban
+              mobility: higher growth multiplier than
+              conventional EVs.</p>
           </div>
 
           <div className='flex flex-col xl:flex-row gap-8'>
@@ -43,7 +45,7 @@ const GrowthPotentialSection: React.FC = () => {
                 style={{
                   boxShadow: "0px 4px 10px 0px #0000004D"
                 }}
-                className='xl:max-w-[275px] px-5 py-4 bg-primary-text-100 rounded-[20px] flex flex-col items-center gap-2'
+                className='xl:max-w-[3650px] px-5 py-4 bg-primary-text-100 rounded-[20px] flex flex-col items-center gap-2'
               >
                 <img src="/map.png" alt="map" draggable={false} />
                 <span className='text-primary-green text-center font-bold text-3xl md:text-4xl lg:text-5xl'>{counter1}%</span>
@@ -55,7 +57,7 @@ const GrowthPotentialSection: React.FC = () => {
                 style={{
                   boxShadow: "0px 4px 10px 0px #0000004D"
                 }}
-                className='xl:max-w-[275px] px-5 py-4 bg-primary-text-100 rounded-[20px] flex flex-col items-center gap-2'
+                className='xl:max-w-[330px] px-5 py-4 bg-primary-text-100 rounded-[20px] flex flex-col items-center gap-2'
               >
                 <img src="/people.png" alt="map" draggable={false} />
                 <span className='text-primary-green text-center font-bold text-3xl md:text-4xl lg:text-5xl'>{counter2}%</span>

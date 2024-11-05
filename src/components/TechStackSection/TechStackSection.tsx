@@ -13,9 +13,12 @@ const TechStackSection: React.FC = () => {
             <p className='text-primary-green text-2xl md:text-3xl lg:text-4xl text-center'>Most Advanced Micro-EV Platform Architecture</p>
           </div>
 
-          <p className='max-w-[1140px] mt-6 text-white text-base md:text-lg leading-[130%] text-center'>Consumer Vehicle(Eli ZERO) is only part of our R&D-- Besides the commercially available Eli ZERO, 
-            we are developing a comprehensive portfolio of functions and features of the most advanced micro-EV platform, 
-            for a wide range of micro-EV models and applications in the future.</p>
+          <p className='max-w-[1140px] mt-6 text-white text-base md:text-lg leading-[130%] text-center'>The consumer vehicle, Eli ZERO, is only part of our
+R&D. In addition to the commercially available Eli
+ZERO, we are developing a comprehensive portfolio of
+advanced features and capabilities for our micro-EV
+platform, designed to support a wide range of micro-EV
+models and applications in the future.</p>
         </div>  
       </div>
 

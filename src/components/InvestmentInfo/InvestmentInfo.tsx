@@ -39,10 +39,10 @@ const InvestmentInfo: React.FC = () => {
             style={{
               background: 'linear-gradient(90deg, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.2) 100%)',
             }}
-            className='px-4 sm:px-8 py-1.5 md:py-2 w-full rounded-2xl flex items-center justify-between gap-4 border border-solid border-white'
+            className='px-2 sm:px-8 py-1.5 md:py-2 w-full rounded-2xl flex items-center justify-between gap-4 border border-solid border-white'
           >
-            <p className='text-white text-xl sm:text-2xl font-thin'>Invest <span className='font-medium'>${investment}+</span> for</p>
-            <span className='text-primary-green text-xl sm:text-[28px] text-center font-extrabold'>{bonus}% Bonus</span>
+            <p className='text-white text-sm sm:text-2xl font-thin'>Invest <span className='font-medium'>${investment}+</span> for</p>
+            <span className='text-primary-green text-lg sm:text-xl sm:text-[28px] text-center font-extrabold'>{bonus}% Bonus</span>
           </div>
         )}
       </div>

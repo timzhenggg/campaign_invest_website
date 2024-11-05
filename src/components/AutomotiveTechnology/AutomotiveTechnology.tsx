@@ -14,7 +14,7 @@ const AutomotiveTechnology: React.FC = () => {
   };
 
   return (
-    <section id='market' className='py-14 w-full'>
+    <section className='py-14 w-full'>
       <MaxWidthContainer>
         <div className='flex flex-col gap-10'>
           {/* Section Heading and Description */}

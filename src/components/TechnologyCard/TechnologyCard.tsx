@@ -9,7 +9,7 @@ const TechnologyCard: React.FC<Props> = ({ technology }) => {
   const { imageSrc, imageAlt, title } = technology;
 
   return (
-    <div className='relative w-full min-h-[240px] h-full rounded-2xl overflow-hidden hover:-translate-y-2.5 transition-all duration-300'>
+    <div className='relative w-full min-h-[240px] h-full rounded-2xl overflow-hidden'>
       <img
         className='absolute inset-0 w-full h-full object-cover'
         src={imageSrc}

@@ -23,7 +23,7 @@ export const technologies: ITechnology[] = [
   {
     imageSrc: "/sony-system.png",
     imageAlt: "Sony system",
-    title: " Optional SONY infotainment system",
+    title: " Opt. SONY infotainment system",
   },
   {
     imageSrc: "/anti-lock-system.png",

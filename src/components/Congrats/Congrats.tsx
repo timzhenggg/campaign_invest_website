@@ -27,7 +27,7 @@ const Congrats: React.FC<Props> = ({ category }) => {
       break;
     case "C":
       congratsMessage = "Welcome, ";
-      mainDescription = "Join Eli’s Private Extension Round, last opportunity to take advantage of 2024 terms."
+      mainDescription = "Join Eli’s private extension round--your last opportunity to take advantage of 2024 terms."
       break;
   }
 
@@ -37,7 +37,7 @@ const Congrats: React.FC<Props> = ({ category }) => {
         boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
         background: 'linear-gradient(90deg, rgba(217, 217, 217, 0.2) 0%, rgba(115, 115, 115, 0.2) 100%)',
       }}
-      className='max-w-[430px] min-h-[350px] sm:min-h-[400px] px-4 md:px-6 py-8 md:py-14 rounded-3xl flex flex-col justify-between'
+      className='max-w-[430px] sm:min-h-[400px] px-4 md:px-6 py-8 md:py-14 rounded-3xl flex flex-col justify-between gap-2.5'
     >
       <p className='text-2xl md:text-3xl text-white font-extrabold'>{congratsMessage}</p>
       <span className='text-xl md:text-2xl text-white leading-[140%]'>{mainDescription}</span>

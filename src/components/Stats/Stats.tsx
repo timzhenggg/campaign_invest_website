@@ -4,7 +4,7 @@ import StatsCard from '../StatsCard/StatsCard';
 
 const Stats: React.FC = () => {
   return (
-    <div className='w-full grid sm:grid-cols-2 md:flex md:justify-center gap-3'>
+    <div className='w-full grid grid-cols-2 md:flex md:justify-center gap-3'>
       {stats.map(({iconPath, value, textAfterValue, textBeforeValue, description}, index) => (
         <StatsCard key={index} iconPath={iconPath} value={value} textBeforeValue={textBeforeValue} textAfterValue={textAfterValue} description={description} />
       ))}
