@@ -41,16 +41,16 @@ const CountdownTimer: React.FC<Props> = ({ targetDate }) => {
   return (
     <div className='px-3 py-1 rounded-md bg-black flex items-center'>
       <div className='pr-1.5 flex items-center gap-1 text-white text-xs border-r border-solid border-white/30'>
-        <span className='font-bold text-lg'>{timeLeft.days}</span> Days
+        <span className='font-bold text-lg'>{timeLeft.days}</span> days
       </div>
       <div className='px-1.5 flex items-center gap-1 text-white text-xs border-r border-solid border-white/30'>
-        <span className='font-bold text-lg'>{timeLeft.hours}</span> Hours
+        <span className='font-bold text-lg'>{timeLeft.hours}</span> hrs
       </div>
       <div className='px-1.5 flex items-center gap-1 text-white text-xs border-r border-solid border-white/30'>
-        <span className='font-bold text-lg'>{timeLeft.minutes}</span> Minutes
+        <span className='font-bold text-lg'>{timeLeft.minutes}</span> mins
       </div>
-      <div className='pl-1.5 flex items-center gap-1 text-white text-x'>
-        <span className='font-bold text-lg'>{timeLeft.seconds}</span> Seconds
+      <div className='pl-1.5 flex items-center gap-1 text-white text-xs'>
+        <span className='font-bold text-lg'>{timeLeft.seconds}</span> sec
       </div>
     </div>
   );
