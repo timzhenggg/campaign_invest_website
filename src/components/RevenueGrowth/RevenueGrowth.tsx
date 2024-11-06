@@ -38,7 +38,7 @@ const RevenueGrowth: React.FC = () => {
         background: "url(/revenue-growth-bg.png) no-repeat",
         backgroundSize: "cover"
       }}
-      className='xl:max-w-[300px] w-full h-full min-h-fit py-8 px-12 rounded-2xl sm:rounded-3xl md:rounded-2xl overflow-hidden flex flex-col items-center gap-4'
+      className='min-w-[320px] sm:min-w-0 xl:max-w-[300px] w-full h-full min-h-fit py-8 px-12 rounded-2xl sm:rounded-3xl md:rounded-2xl overflow-hidden flex flex-col items-center gap-4'
     >
       <span className='text-white text-xl leading-[120%] text-center flex flex-col items-center'>Revenue Growth Year-over-Year <span>3 years in a row</span></span>
       
