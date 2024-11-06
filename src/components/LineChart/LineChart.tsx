@@ -1,8 +1,9 @@
 import { CategoryScale, Chart as ChartJS, ChartOptions, Legend, LineElement, LinearScale, PointElement, Tooltip } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 import React, { useRef } from 'react';
 import { Line } from 'react-chartjs-2';
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend);
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Tooltip, Legend, ChartDataLabels);
 
 const LineChart: React.FC = () => {
   const chartRef = useRef(null);
@@ -16,7 +17,7 @@ const LineChart: React.FC = () => {
         fill: true,
         backgroundColor: '#FFF', 
         borderColor: '#12E39C', 
-        borderWidth: 2,
+        borderWidth: 4,
         pointRadius: 5, 
         pointHoverRadius: 7,
       },
@@ -31,7 +32,7 @@ const LineChart: React.FC = () => {
         position: 'top' as const,
         onClick: () => {},
         labels: {
-          boxWidth: 0, // hide rectangle
+          boxWidth: 0,
           font: {
             size: 18,
           },
@@ -39,6 +40,15 @@ const LineChart: React.FC = () => {
       },
       tooltip: {
         enabled: true,
+      },
+      datalabels: {
+        display: true,
+        color: '#000',
+        font: {
+          size: 16,
+        },
+        align: 'top',
+        formatter: (value: number) => `${value.toFixed(1)}%`, // Adding % symbol
       },
     },
     scales: {
