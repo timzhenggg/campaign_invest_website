@@ -1,7 +1,6 @@
 import { motion, useInView } from 'framer-motion';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import useCounter from '../../hooks/useCounter';
-import { useWindowWidth } from '../../hooks/useWindowWidth';
 
 const MarketShare: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
