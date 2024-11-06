@@ -17,7 +17,7 @@ const GrowthPotentialSection: React.FC = () => {
   return (
     <div id="steady-growth" className='py-14 bg-gray-200'>
       <MaxWidthContainer>
-        <div className='w-full flex flex-col items-center gap-12 md:gap-16 lg:gap-20'>
+        <div className='w-full flex flex-col items-center gap-12 md:gap-16 lg:gap-24'>
           <div className='z-10 flex flex-col items-center gap-4'>
             <SectionHeading color='text-white' className='text-center font-bold'>142X Market Growth Potential</SectionHeading>
             <p className='text-white leading-[130%] text-center text-base md:text-lg'>Micro-EVs are the next big thing in urban

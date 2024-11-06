@@ -17,11 +17,11 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
   };
 
   return (
-    <div id='bonuses' className='w-full bg-black py-14'>
+    <div id='bonuses' className='w-full bg-black py-12'>
       <MaxWidthContainer>
-        <div>
+        <div className='lg:scale-75 lg:-my-32'>
           <motion.div
-            className='w-full flex flex-col items-center gap-12 md:gap-16 lg:gap-20'
+            className='w-full flex flex-col items-center gap-8 md:gap-10 lg:gap-12'
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
@@ -48,7 +48,7 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
             >
               Join the last window to invest at 2024 stock price
             </motion.p>
-            <motion.div variants={fadeInUp}>
+            <motion.div className='-mt-4' variants={fadeInUp}>
               <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
             </motion.div>
             <motion.span

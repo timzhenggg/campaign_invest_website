@@ -18,9 +18,9 @@ const RevenueStatsCard: React.FC<Props> = ({ title, children, value, titleClassN
   return (
     <div 
       ref={ref}
-      className='bg-white w-full h-full shadow-md rounded-3xl p-6 flex flex-col items-center gap-6'
+      className='bg-white w-full h-full shadow-md rounded-3xl p-6 flex flex-col items-center justify-center gap-4'
     >
-      <p className={clsx('text-primary-text text-xl text-center', titleClassName)}>{title}</p>
+      <p className={clsx('text-primary-text text-lg text-center', titleClassName)}>{title}</p>
       <div className='flex items-center'>
         {React.Children.map(children, (child) => {
           if (

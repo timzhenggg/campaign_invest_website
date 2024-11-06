@@ -58,10 +58,14 @@ const StatsCard: React.FC<Props> = ({
     }
   }, [isVisible, targetValue]);
 
+  const formattedValue = new Intl.NumberFormat('de-DE').format(displayValue);
+
   return (
     <div ref={cardRef} className='min-w-[130px] p-4 border border-solid border-white rounded-xl flex flex-col'>
-      <img src={iconPath} alt={iconAlt} draggable={false} className='size-12' />
-      <span className='text-white text-xl sm:text-3xl font-bold'>{textBeforeValue}{displayValue}{textAfterValue}</span>
+      <img src={iconPath} alt={iconAlt} draggable={false} className='size-10' />
+      <span className='text-white text-lg sm:text-xl md:text-2xl font-bold'>
+        {textBeforeValue}{formattedValue}{textAfterValue}
+      </span>
       <p className='text-white/50 text-sm sm:text-base'>{description}</p>
     </div>
   );

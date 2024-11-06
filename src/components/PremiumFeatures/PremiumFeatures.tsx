@@ -9,8 +9,8 @@ const PremiumFeatures: React.FC = () => {
       </div>
 
       <div className='sm:w-auto flex sm:flex-col sm:justify-between items-end gap-5'>
-        <img src="/design-award.png" alt="design award" draggable={false} className='w-1/4 sm:w-auto sm:h-full object-cover' />
-        <img src="/top-100-award.png" alt="top 100 award" draggable={false} className='w-1/4 sm:w-auto h-full object-cover'/>
+        <img src="/design-award.svg" alt="design award" draggable={false} className='w-1/4 sm:w-auto sm:h-full object-cover' />
+        <img src="/top-100-award.svg" alt="top 100 award" draggable={false} className='w-1/4 sm:w-auto h-full object-cover'/>
       </div>
     </div>
   );
