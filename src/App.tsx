@@ -99,7 +99,7 @@ function App() {
             className='md:hidden z-10 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center' 
             variants={fadeInUp}
           >
-            <Button className='relative w-3/4 my-4 px-14 text-3xl uppercase font-extrabold overflow-hidden'>
+            <Button className='relative w-3/4 px-14 text-3xl uppercase font-extrabold overflow-hidden'>
               <span className='ripple-effect ripple-effect-white'></span> 
               Invest now
             </Button>
