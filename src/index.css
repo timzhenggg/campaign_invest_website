@@ -43,7 +43,7 @@
 }
 
 .gradient-bg {
-  background: linear-gradient(270deg, rgba(18, 227, 156, 0.1), rgba(255, 255, 255, 0.15), rgba(18, 227, 156, 0.15), rgba(255, 255, 255, 0.2));
+  background: linear-gradient(270deg, rgb(18, 227, 0.1), rgb(0, 0, 0.15), rgb(18, 227, 0.15), rgb(0, 0, 0.2));
   background-size: 800% 800%;
   animation: pulseGradient 8s ease infinite;
 }
