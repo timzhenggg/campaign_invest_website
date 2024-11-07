@@ -58,7 +58,10 @@ const StatsCard: React.FC<Props> = ({
     }
   }, [isVisible, targetValue]);
 
-  const formattedValue = new Intl.NumberFormat('de-DE').format(displayValue);
+  const formattedValue = new Intl.NumberFormat('de-DE', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(displayValue);
 
   return (
     <div ref={cardRef} className='min-w-[130px] p-4 border border-solid border-white rounded-xl flex flex-col'>

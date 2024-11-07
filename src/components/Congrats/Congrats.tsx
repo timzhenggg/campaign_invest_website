@@ -20,14 +20,14 @@ const Congrats: React.FC<Props> = ({ category }) => {
       bonusesLabel = "For All Current Shareholders";
       break;
     case "B":
-      congratsMessage = "Congrats, ";
-      mainDescription = "Because you’ve expressed interest, or have signed up to our wait list - You quality for 5% Bonus shares if you invest in this extension round."
+      congratsMessage = "Congrats! 🎉";
+      mainDescription = "Because you've expressed interest or signed up for our waitlist, you qualify for 5% bonus shares if you invest in this extension round."
       bonusesPercent = "5% Bonus";
       bonusesLabel = "Community Bonus";
       break;
     case "C":
       congratsMessage = "Welcome!";
-      mainDescription = "Join Eli’s private extension round--your last opportunity to take advantage of 2024 terms."
+      mainDescription = "Join Eli’s private extension round - your last opportunity to take advantage of 2024 terms."
       break;
   }
 
@@ -48,8 +48,8 @@ const Congrats: React.FC<Props> = ({ category }) => {
         }} 
         className='py-4 px-6 rounded-2xl border border-solid border-white flex items-center justify-between gap-2'
       >
-        <span className='text-2xl md:text-3xl text-center font-extrabold text-primary-green'>{bonusesPercent}</span>
-        <span className='max-w-[150px] text-lg md:text-xl text-white'>{bonusesLabel}</span>
+        <span className='text-xl sm:text-center sm:text-2xl md:text-3xl font-extrabold text-primary-green'>{bonusesPercent}</span>
+        <span className='max-w-[150px] text-right sm:text-center sm:text-lg md:text-xl text-white'>{bonusesLabel}</span>
       </div>}
       {(!bonusesLabel && !bonusesPercent) &&
         <span className='text-xl md:text-2xl text-white leading-[140%]'>Be a part of the mobility revolution and become an Eli shareholder.</span>}

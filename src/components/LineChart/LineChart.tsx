@@ -35,6 +35,7 @@ const LineChart: React.FC = () => {
           boxWidth: 0,
           font: {
             size: 18,
+            weight: 'bold',
           },
         },
       },

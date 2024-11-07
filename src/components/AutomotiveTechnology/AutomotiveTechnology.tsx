@@ -26,8 +26,12 @@ const AutomotiveTechnology: React.FC = () => {
             variants={fadeInUp}
             className='flex flex-col items-center gap-1'
           >
-            <SectionHeading className='font-bold text-center'>Best Micro-EV on the market</SectionHeading>
-            <p className='text-primary-text text-lg md:text-xl text-center'>Eli ZERO is built to be the best micro-EV on the market, in the EU-L6e and US-LSV category</p>
+            <SectionHeading className='hidden sm:block font-bold text-center'>Best Micro-EV on the market</SectionHeading>
+            <h2 className={'text-3xl font-bold flex flex-col items-center text-center text-primary-text'}>
+              <span>Best Micro-EV</span>
+              <span>on the market</span>
+            </h2>
+            <p className='text-primary-text text-lg md:text-xl text-center'>The Eli ZERO is built to be the best micro-EV on the market in the EU-L6e and US-LSV categories</p>
           </motion.div>
 
           {/* Technology Cards Grid */}

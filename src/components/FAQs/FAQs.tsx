@@ -5,7 +5,6 @@ import { faq2, faq3, faqs1 } from '../../assets/data/faqs';
 import AccordionItem from '../AccordionItem/AccordionItem';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SectionHeading from '../UI/SectionHeading/SectionHeading';
-import Button from '../UI/Button/Button';
 
 const FAQs: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("About The Current Raise");
@@ -36,10 +35,6 @@ const FAQs: React.FC = () => {
 
   return (
     <section id='faqs' className="-mt-28 py-14 w-full flex flex-col items-center gap-14">
-      <motion.div className='sm:hidden'>
-        <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
-      </motion.div>
-      
       <MaxWidthContainer>
         <div className="w-full flex flex-col gap-8">
           <SectionHeading className="text-center font-medium">FAQs</SectionHeading>

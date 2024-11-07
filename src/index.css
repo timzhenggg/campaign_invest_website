@@ -43,7 +43,58 @@
 }
 
 .gradient-bg {
-  background: linear-gradient(270deg, rgb(18, 227, 0.1), rgb(0, 0, 0.15), rgb(18, 227, 0.15), rgb(0, 0, 0.2));
+  background: linear-gradient(270deg, rgba(18, 227, 156, 0.1), rgba(255, 255, 255, 0.15), rgba(18, 227, 156, 0.15), rgba(255, 255, 255, 0.2));
   background-size: 800% 800%;
   animation: pulseGradient 8s ease infinite;
+}
+
+.ripple-effect {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple 2.5s infinite;
+}
+
+.ripple-effect-green { 
+  background: rgba(18, 227, 156, 0.5);
+}
+
+.ripple-effect-white {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+@keyframes ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes pulseGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }

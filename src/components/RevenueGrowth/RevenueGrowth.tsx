@@ -40,7 +40,7 @@ const RevenueGrowth: React.FC = () => {
       }}
       className='min-h-[320px] xl:max-w-[300px] w-full h-full sm:min-h-fit py-8 px-12 rounded-2xl sm:rounded-3xl md:rounded-2xl overflow-hidden flex flex-col items-center gap-4'
     >
-      <span className='text-white text-xl leading-[120%] text-center flex flex-col items-center'>Revenue Growth Year-over-Year <span>3 years in a row</span></span>
+      <span className='text-white text-xl leading-[120%] text-center flex flex-col items-center font-bold'>Revenue Growth Year-over-Year <span className='font-normal'>3 years in a row</span></span>
       
       <div className='size-44 min-w-44 min-h-44 sm:size-52 rounded-full flex flex-col justify-center items-center border-[3px] border-solid border-white/50'>
         <img src="/arrow-up-icon.svg" alt="arrow up icon" draggable={false} />

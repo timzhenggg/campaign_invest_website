@@ -82,27 +82,6 @@ const Footer: React.FC = () => {
           </div>
 
           <div className='flex flex-col gap-12 md:gap-16'>
-            <div className='flex flex-col gap-6 sm:gap-8'>
-              <p className='text-primary-text-100 font-bold text-2xl md:text-3xl'>Sources</p>
-              <ol className='list-decimal list-inside'>
-                <li className='text-primary-green text-sm'>
-                  <a href="https://micromobility.io/news/what-is-micromobility" target='_blank'>
-                    https://micromobility.io/news/what-is-micromobility
-                  </a>
-                </li>
-                <li className='text-primary-green text-sm'>
-                  <a href="https://bikeleague.org/national-household-travel-survey-short-trips-analysis/" target='_blank'>
-                    https://bikeleague.org/national-household-travel-survey-short-trips-analysis/
-                  </a>
-                </li>
-                <li className='text-primary-green text-sm'>
-                  <a href="https://www.mckinsey.com/features/mckinsey-center-for-future-mobility/mckinsey-on-urban-mobility/minimobility-the-next-big-thing-in-urban-mobility" target='_blank'>
-                    https://www.mckinsey.com/features/mckinsey-center-for-future-mobility/mckinsey-on-urban-mobility/minimobility-the-next-big-thing-in-urban-mobility
-                  </a>
-                </li>
-              </ol>
-            </div>
-
             <div className='w-full flex flex-col items-center gap-12 md:gap-16'>
               <div className='flex flex-col gap-6 md:gap-8'>
                 <p className='text-white/50 leading-[130%] text-sm'>Equity crowdfunding investments in private placements, and start-up investments in particular, are speculative and involve a high degree of risk and those investors who cannot afford to lose their entire investment should not invest in start-ups. Companies seeking startup investment through equity crowdfunding tend to be in earlier stages of development and their business model, products and services may not yet be fully developed, operational or tested in the public marketplace. There is no guarantee that the stated valuation and other terms are accurate or in agreement with the market or industry valuations. Further, investors may receive illiquid and/or restricted stock that may be subject to holding period requirements and/or liquidity concerns.</p>

@@ -12,12 +12,14 @@ interface Props<T extends FieldValues> {
   register: UseFormRegister<T>;
   errors: FieldErrors<T>;
   handleSubmit: () => void;
+  isValidUser: boolean;
 }
 
 const HeroSection = <T extends FieldValues>({
   register,
   errors,
-  handleSubmit
+  handleSubmit,
+  isValidUser,
 }: Props<T>) => {
   const [bgImageIndex, setBgImageIndex] = useState(0);
   const [nextBgImageIndex, setNextBgImageIndex] = useState(1);
@@ -97,7 +99,7 @@ const HeroSection = <T extends FieldValues>({
                 transition={{ delay: 0.4 }}
               >
                 Exclusive Private Extension Round <span className='hidden lg:block'>Period</span>
-                <span className='font-normal'>Last Chance to Invest in 2024 Terms</span>
+                <span className='font-normal'>Last Chance to Invest at 2024 Terms</span>
               </motion.h1>
               <motion.p 
                 className='text-white text-center text-sm sm:text-xl md:text-2xl leading-[140%]'
@@ -105,7 +107,7 @@ const HeroSection = <T extends FieldValues>({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                We received overwhelming interests from investors who missed our 2024 round or want to increase their existing stake at the same terms. For 10 days only, we are offering a <span className='font-bold'>limited-timed private extension round</span>
+                We received overwhelming interests from investors who either missed our 2024 round or want to increase their existing stake at the same terms. For 10 days only, we are offering a <span className='font-bold'>limited-timed, private extension round.</span>
               </motion.p>
               <motion.p 
                 className='text-white text-center text-sm sm:text-xl md:text-2xl leading-[140%]'
@@ -134,7 +136,7 @@ const HeroSection = <T extends FieldValues>({
                   />
                 </label>
               
-                <Button type='submit' className='uppercase'>Access Investment Page</Button>
+                {!isValidUser && <Button type='submit' className='uppercase'>Access Investment Page</Button>}
               </motion.form>
             </motion.div>
 

@@ -16,6 +16,8 @@ import Logos from "./components/Logos/Logos";
 import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth";
 import TechStack from "./components/TechStackSection/TechStackSection";
 import { emailValidator } from "./validators/emailValidator";
+import { motion } from "framer-motion";
+import Button from "./components/UI/Button/Button";
 
 export type Category = "A" | "B" | "C" | null;
 
@@ -63,16 +65,22 @@ function App() {
     }
   }, [isValidUser, category]);
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 }
+  };
+
   return (
     <div className="w-full h-full flex flex-col flex-1">
       <Header />
 
-      <main className="flex flex-col flex-1">
+      <main className="pt-20 sm:pt-14 flex flex-col flex-1">
         <HeroSection
           name="email"
           register={register}
           errors={errors}
           handleSubmit={handleSubmit(handleSubmitEmail)}
+          isValidUser={isValidUser}
         />
 
         {isValidUser && <div>
@@ -86,6 +94,16 @@ function App() {
           <TechStack />
           <FAQs /> 
           <Footer />
+
+         <motion.div 
+            className='md:hidden w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center' 
+            variants={fadeInUp}
+          >
+            <Button className='relative w-3/4 my-4 px-14 text-3xl uppercase font-extrabold overflow-hidden'>
+              <span className='ripple-effect ripple-effect-white'></span> 
+              Invest now
+            </Button>
+          </motion.div>
         </div>}
       </main>
     </div>

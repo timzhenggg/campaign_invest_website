@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import useCounter from '../../hooks/useCounter';
 
 interface Props {
-  title: string;
+  title: string[];
   children: React.ReactNode; // Accept children for flexibility
   value: number; // Target value for the counter
   titleClassName?: string;
@@ -20,7 +20,7 @@ const RevenueStatsCard: React.FC<Props> = ({ title, children, value, titleClassN
       ref={ref}
       className='bg-white w-full h-full shadow-md rounded-3xl p-6 flex flex-col items-center justify-center gap-4'
     >
-      <p className={clsx('text-primary-text text-lg text-center', titleClassName)}>{title}</p>
+      <p className={clsx('text-primary-text text-lg text-center flex flex-col items-center', titleClassName)}>{title[0]} <span>{title?.[1]}</span></p>
       <div className='flex items-center'>
         {React.Children.map(children, (child) => {
           if (

@@ -56,8 +56,8 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
               variants={fadeInUp}
             >
               “By regulation, bonus amount will NOT
-be calculated on your investment page. It will be applied
-AFTER your investment iscompleted and reflected int he number of shares issued and average cost per share. For questions, email <a href="mailto:ir@eli.world" className="underline">ir@eli.world</a>.
+              be calculated on your investment page. It will be applied
+              AFTER your investment iscompleted and reflected int he number of shares issued and average cost per share. For questions, email <a href="mailto:ir@eli.world" className="underline">ir@eli.world</a>.
             </motion.span>
           </motion.div>
         </div>

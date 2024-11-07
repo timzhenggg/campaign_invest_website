@@ -29,13 +29,13 @@ const SteadyGrowth: React.FC = () => {
             <RevenueGrowth />
 
             <div className='xl:max-w-[280px] w-full h-full flex flex-col gap-6'>
-              <RevenueStatsCard title='Sales Revenue in 2023' value={2.7}>
+              <RevenueStatsCard title={['Sales Revenue in 2023']}value={2.7}>
                 <span className='text-primary-green text-5xl font-bold'>$</span>
                 <span className="text-primary-green text-5xl font-bold counter"></span>
                 <span className='text-primary-green text-5xl font-bold'>M</span>
               </RevenueStatsCard>
 
-              <RevenueStatsCard title='Reduction in BOM costs over the last 24 months' value={18}>
+              <RevenueStatsCard title={['Reduction in BOM costs', 'over the last 24 months']} value={18}>
                 <img src="/arrow-down-icon.svg" alt="arrow down" draggable={false} />
                 <span className="text-primary-green text-5xl font-bold counter"></span>
                 <span className='text-primary-green text-5xl font-bold'>+%</span>

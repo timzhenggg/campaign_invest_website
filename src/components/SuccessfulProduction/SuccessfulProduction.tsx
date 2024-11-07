@@ -13,7 +13,7 @@ const SuccessfulProduction: React.FC = () => {
         className="px-4 w-full min-h-[370px] sm:h-[550px] bg-no-repeat bg-contain rounded-2xl flex flex-col items-center justify-center gap-8"
       >
         <motion.h3
-          className="text-white text-2xl md:text-3xl font-bold text-center"
+          className="text-primary-green sm:text-white text-2xl md:text-3xl font-bold text-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -27,7 +27,7 @@ const SuccessfulProduction: React.FC = () => {
           animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.35 }}
         >
-          <p className="text-2xl md:text-2xl text-white font-bold">
+          <p className="text-2xl md:text-2xl text-primary-green sm:text-white font-bold">
             <span className="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl">4000/</span>year
           </p>
           <span className="text-white text-lg sm:text-xl md:text-2xl font-bold text-center">Vehicle Production Capacity</span>
