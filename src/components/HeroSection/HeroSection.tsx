@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FieldErrors, FieldValues, Path, UseFormRegister } from "react-hook-form";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import AutotechAward from '../AutotechAward/AutotechAward';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SeriesPrivateExtension from '../SeriesPrivateExtension/SeriesPrivateExtension';
@@ -22,8 +22,6 @@ const HeroSection = <T extends FieldValues>({
   isValidUser,
 }: Props<T>) => {
   const [bgImageIndex, setBgImageIndex] = useState(0);
-  const [nextBgImageIndex, setNextBgImageIndex] = useState(1);
-  const [fade, setFade] = useState(false);
 
   const backgroundImages = [
     '/hero-section-bg.webp',
@@ -32,12 +30,7 @@ const HeroSection = <T extends FieldValues>({
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setFade(true);
-      setTimeout(() => {
-        setBgImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-        setNextBgImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-        setFade(false);
-      }, 1000); // Matches CSS transition duration
+      setBgImageIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
     }, 15000); // Change image every 15 seconds
 
     return () => clearInterval(intervalId);
@@ -51,18 +44,17 @@ const HeroSection = <T extends FieldValues>({
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <motion.img
-        src={backgroundImages[bgImageIndex]}
-        alt="current hero section background"
-        draggable={false}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${fade ? 'opacity-0' : 'opacity-100'}`}
-      />
-      <motion.img
-        src={backgroundImages[nextBgImageIndex]}
-        alt="next hero section background"
-        draggable={false}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${fade ? 'opacity-100' : 'opacity-0'}`}
-      />
+      <AnimatePresence>
+        <motion.div
+          key={bgImageIndex}
+          className='absolute inset-0 w-full h-full object-cover'
+          style={{ backgroundImage: `url(${backgroundImages[bgImageIndex]})`, backgroundSize: "contain" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+        />
+      </AnimatePresence>
       
       <motion.div
         className='z-10 hidden xl:block mb-3 py-1 px-8 w-fit rounded-full text-primary-green text-2xl font-bold gradient-bg'
