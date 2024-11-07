@@ -48,7 +48,7 @@ const HeroSection = <T extends FieldValues>({
         <motion.div
           key={bgImageIndex}
           className='absolute inset-0 w-full h-full object-cover'
-          style={{ backgroundImage: `url(${backgroundImages[bgImageIndex]})`, backgroundSize: "contain" }}
+          style={{ backgroundImage: `url(${backgroundImages[bgImageIndex]})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
