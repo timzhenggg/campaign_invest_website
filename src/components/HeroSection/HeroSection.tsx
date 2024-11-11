@@ -90,7 +90,7 @@ const HeroSection = <T extends FieldValues>({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Exclusive Private Extension Round <span className='hidden lg:block'>Period</span>
+                Limited-Time Extension Round <span className='hidden lg:block'>Period</span>
                 <span className='font-normal'>Last Chance to Invest at 2024 Terms</span>
               </motion.h1>
               <motion.p 

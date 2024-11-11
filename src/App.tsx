@@ -1,5 +1,5 @@
 import { joiResolver } from "@hookform/resolvers/joi";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import data from "../users.json";
 import { scrollToSectionById } from "./assets/helpers/scrollToSectionById";
@@ -24,10 +24,12 @@ export type Category = "A" | "B" | "C" | null;
 function App() {
   const [isValidUser, setIsValidUser] = useState(false);
   const [category, setCategory] = useState<Category>(null);
-
+  const [showButton, setShowButton] = useState(true);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  
   const {
     register,
-    formState: { errors, },
+    formState: { errors },
     handleSubmit,
   } = useForm<{ email: string }>({
     mode: "all",
@@ -38,16 +40,16 @@ function App() {
     let category;
     if (data.categoryA.includes(email)) {
       category = "A";
-      setCategory('A');
+      setCategory("A");
     } else if (data.categoryB.includes(email)) {
       category = "B";
-      setCategory('B');
+      setCategory("B");
     } else {
       category = "C";
-      setCategory('C');
+      setCategory("C");
     }
 
-    setIsValidUser(email !== '' && category !== null);
+    setIsValidUser(email !== "" && category !== null);
   };
 
   const handleSubmitEmail = (data: { email: string }) => {
@@ -65,14 +67,37 @@ function App() {
     }
   }, [isValidUser, category]);
 
+  useEffect(() => {
+    let lastScrollTop = 0;
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        setShowButton(false);
+      } else {
+        setShowButton(true);
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const isIntersecting = localStorage.getItem('isIntersecting') === 'true';
+    setIsIntersecting(isIntersecting);
+  }, []);
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 }
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <div className="w-full h-full flex flex-col flex-1">
-      <Header />
+      <Header isValidUser={isValidUser} />
 
       <main className="pt-20 sm:pt-14 flex flex-col flex-1">
         <HeroSection
@@ -83,31 +108,39 @@ function App() {
           isValidUser={isValidUser}
         />
 
-        {isValidUser && <div>
-          <BonusesSection category={category} />
-          <Logos />
-          <InternationalExpansionSection />
-          <SteadyGrowth />
-          <GrowthPotentialSection />
-          <CEOInsights />
-          <AutomotiveTechnology />
-          <TechStack />
-          <FAQs /> 
-          <Footer />
+        {isValidUser && (
+          <div>
+            <BonusesSection category={category} />
+            <Logos />
+            <InternationalExpansionSection />
+            <SteadyGrowth />
+            <GrowthPotentialSection />
+            <CEOInsights />
+            <AutomotiveTechnology />
+            <TechStack />
+            <FAQs />
+            <Footer />
 
-         <motion.div 
-            className='md:hidden z-10 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center' 
-            variants={fadeInUp}
-          >
-            <Button className='relative w-3/4 px-14 text-3xl uppercase font-extrabold overflow-hidden'>
-              <span className='ripple-effect ripple-effect-white'></span> 
-              Invest now
-            </Button>
-          </motion.div>
-        </div>}
+            {showButton && isIntersecting && (
+              <motion.div
+                className="md:hidden z-50 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center"
+                variants={fadeInUp}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Button className="relative w-[65%] px-14 text-lg uppercase font-extrabold overflow-hidden">
+                  <span className="ripple-effect ripple-effect-white"></span>
+                  Invest now
+                </Button>
+              </motion.div>
+            )}
+          </div>
+        )}
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

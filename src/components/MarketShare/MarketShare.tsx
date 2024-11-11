@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import useCounter from '../../hooks/useCounter';
 
 const MarketShare: React.FC = () => {
@@ -8,8 +8,34 @@ const MarketShare: React.FC = () => {
 
   const counter = useCounter(45, 2000, 30, isInView);
 
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const isIntersectedBefore = JSON.parse(sessionStorage.getItem('isIntersecting') || 'false');
+    if (isIntersectedBefore) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          sessionStorage.setItem('isIntersecting', 'true');
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(ref.current);
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, []);
+
     return (
       <div 
+        id="market"
         ref={ref}
         className="relative w-full min-h-[370px] pt-8 md:pt-12 pb-6 md:pb-8 rounded-2xl flex flex-col justify-between items-center overflow-hidden"
       >

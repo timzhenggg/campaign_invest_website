@@ -51,23 +51,6 @@ const Footer: React.FC = () => {
           </div>  
 
           <div className='md:-mb-12 w-full flex flex-col sm:flex-row sm:items-end justify-between gap-6'>
-            <div className='flex items-end gap-6'>
-              <div className='flex flex-col gap-2'>
-                <img src="/email-icon.svg" alt="email icon" draggable={false} className='size-6' />
-                <div className='flex flex-col gap-2'>
-                  <span className='text-white/50'>General Inquiry:</span>
-                  <a className='text-white underline' href="mailto:hello@eli.world">hello@eli.world</a>
-                </div>
-              </div>
-              <div className='flex flex-col gap-2'>
-                <img src="/email-icon.svg" alt="email icon" draggable={false} className='size-6' />
-                <div className='flex flex-col gap-2'>
-                  <span className='text-white/50'>Investor Relations:</span>
-                  <a className='text-white underline' href="mailto:ir@eli.world">ir@eli.world</a>
-                </div>
-              </div>
-            </div>
-
             <div>
               <ul className='flex items-center gap-1'>
                 {socialMediaLinks.map(({iconSrc, iconAlt, link}, index) => (
