@@ -17,8 +17,8 @@ import Logos from "./components/Logos/Logos";
 import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth";
 import TechStack from "./components/TechStackSection/TechStackSection";
 import Button from "./components/UI/Button/Button";
+import { useButtonsVisibility } from "./context/useButtonsVisibility";
 import { emailValidator } from "./validators/emailValidator";
-import { ButtonVisibilityProvider, useButtonsVisibility } from "./context/useButtonsVisibility";
 
 export type Category = "A" | "B" | "C" | null;
 
@@ -73,7 +73,6 @@ function App() {
   };
 
   return (
-    <ButtonVisibilityProvider>
       <div className="w-full h-full flex flex-col flex-1">
         <Header isValidUser={isValidUser} />
 
@@ -118,7 +117,6 @@ function App() {
           )}
         </main>
       </div>
-    </ButtonVisibilityProvider>
   );
 }
 
