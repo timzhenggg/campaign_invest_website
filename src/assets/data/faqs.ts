@@ -12,7 +12,7 @@ export const faqs1 = [
     description: ["Class A Common Stock"],
   },
   {
-    title: "How much are you raising? ",
+    title: "How much are you raising?",
     description: ["We are looking to raise approximately $4.1 million."],
   },
   {
@@ -20,9 +20,9 @@ export const faqs1 = [
     description: ["The current valuation is approximately $69M."],
   },
   {
-    title: "What is the current valuation of the company?",
+    title: "Why should I invest?",
     description: [
-      "You get a rare opportunity to invest in an early stage electric vehicles (EV) startup, at its current valuation before its continued growth and maturity. Eli is not only an EV startup, it also taps into the segment of urban mobility, through its advanced micro-EV products. ",
+      "You get a rare opportunity to invest in an early stage electric vehicles (EV) startup, at its current valuation before its continued growth and maturity. Eli is not only an EV startup, it also taps into the segment of urban mobility, through its advanced micro-EV products.",
       "Besides EV’s global surge and expected dominance as cities grow, there’s a fast growing need for space-efficient urban transportation. Our micro-EVs cater to this demand and more. The new estimate by McKinsey, indicating that the Total Addressable Market for micro-EVs is $470 Billion, strongly reinforces our strategic position. Breakthroughs in battery technology enable us to produce high-quality, affordable micro-EVs, addressing changing consumer preferences toward practical, cost-effective, and sustainable transportation options. The convergence of these factors, along with new technologies and service-based business models, creates a unique window of opportunity for disruption in the transportation industry. By capitalizing on this moment, we position ourselves at the forefront of a significant shift in urban mobility."
     ],
   },
@@ -112,13 +112,13 @@ export const faq2 = [
     description: [
       "Eli bridges the gap between two and four-wheel vehicles. Our first model, the Eli ZERO, combines the convenience of a scooter with the comfort of a car, making it the iPad of cars, if conventional cars were laptops.",
       "In Europe, the primary competitors of Eli ZERO are the minicars (cat. L6e) that generally do not provide premium automotive features at an affordable price point. Conversely, in the United States, the main contenders are predominantly street-legal golf carts (LSVs), which fall short in year-round usability and were not initially designed for urban mobility applications.",
-      "Eli ZERO excels by offering exceptional value, bridging the gap between low-cost options and expensive alternatives. In the EU micro-EV market, our vehicle stands out for its appeal and advanced automotive features, including cooling AC. In the US market, Eli enjoys unparalleled positioning as a pioneer in the microcar segment, engineered for passenger comfort and safety. Eli ZERO adheres to NHTSA and FMVSS regulations, transcending typical LSV and NEV standards. Blending passenger car features into a microcar sets us apart. Engineered for daily trips at a competitive price, our vehicles position us as the premium choice, redefining excellence in urban mobility.",
+      "Eli ZERO excels by offering exceptional value, bridging the gap between low-cost options and expensive alternatives. In the EU micro-EV market, our vehicle stands out for its appeal and advanced automotive features, including cooling AC. In the US market, Eli enjoys unparalleled positioning as a pioneer in the microcar segment, engineered for passenger comfort and safety. Eli ZERO adheres to NHTSA and FMVSS regulations, transcending typical LSV and NEV standards. Blending passenger car features into a microcar sets us apart. Engineered for daily trips at a competitive price, our vehicles position us as the premium choice, redefining excellence in urban mobility."
     ],
   },
   {
     title: "Are you looking to partner with any major automotive companies?",
     description: [
-      "Eli is partnering with several valued companies within the automotive industry, encompassing aspects such as the supply chain for sub-assembly parts, vehicle production, and collaboration with dealers affiliated with major car companies. These existing collaborations form the foundation of our operations. Moving forward, our commitment extends to ongoing collaboration with diverse companies to pioneer the technology and vehicles of the future. We remain open to evaluating and forming new partnerships with additional automotive companies, responding to market opportunities and aligning with evolving needs of Eli.",
+      "Eli is partnering with several valued companies within the automotive industry, encompassing aspects such as the supply chain for sub-assembly parts, vehicle production, and collaboration with dealers affiliated with major car companies. These existing collaborations form the foundation of our operations. Moving forward, our commitment extends to ongoing collaboration with diverse companies to pioneer the technology and vehicles of the future. We remain open to evaluating and forming new partnerships with additional automotive companies, responding to market opportunities and aligning with evolving needs of Eli."
     ],
   },
 ];
@@ -127,72 +127,83 @@ export const faq3 = [
   {
     title: "Why invest in startups?",
     description: [
-      "Regulation CF allows investors to invest in startups and early-growth companies. This is different from helping a company raise money on Kickstarter; with Regulation CF Offerings, you aren’t buying products or merchandise - you are buying a piece of a company and helping it grow.",
-    ],
+      "Regulation CF allows investors to invest in startups and early-growth companies. This is different from helping a company raise money on Kickstarter; with Regulation CF Offerings, you aren’t buying products or merchandise - you are buying a piece of a company and helping it grow."
+    ]
   },
   {
     title: "How much can I invest?",
     description: [
-      "Accredited investors can invest as much as they want. But if you are NOT an accredited investor, your investment limit depends on either your annual income or net worth, whichever is greater. If the number is less than $124,000, you can only invest 5% of it. If both are greater than $124,000 then your investment limit is 10%.",
-    ],
+      "Accredited investors can invest as much as they want. But if you are NOT an accredited investor, your investment limit depends on either your annual income or net worth, whichever is greater. If the number is less than $124,000, you can only invest 5% of it. If both are greater than $124,000 then your investment limit is 10%."
+    ]
   },
   {
     title: "How do I calculate my net worth?",
     description: [
-      "To calculate your net worth, just add up all of your assets and subtract all of your liabilities (excluding the value of the person’s primary residence). The resulting sum is your net worth.",
-    ],
+      "To calculate your net worth, just add up all of your assets and subtract all of your liabilities (excluding the value of the person’s primary residence). The resulting sum is your net worth."
+    ]
   },
   {
     title: "What are the tax implications of an equity crowdfunding investment?",
     description: [
-      "We cannot give tax advice, and we encourage you to talk with your accountant or tax advisor before making an investment.",
-    ],
+      "We cannot give tax advice, and we encourage you to talk with your accountant or tax advisor before making an investment."
+    ]
+  },
+  {
+    title: "Who can invest in a Regulation CF Offering?",
+    description: [
+      "Individuals over 18 years of age can invest."
+    ]
+  },
+  {
+    title: "What do I need to know about early-stage investing? Are these investments risky?",
+    description: [
+      "There will always be some risk involved when investing in a startup or small business. And the earlier you get in the more risk that is usually present. If a young company goes out of business, your ownership interest could lose all value. You may have limited voting power to direct the company due to dilution over time. You may also have to wait about five to seven years (if ever) for an exit via acquisition, IPO, etc. Because early-stage companies are still in the process of perfecting their products, services, and business model, nothing is guaranteed. That’s why startups should only be part of a more balanced, overall investment portfolio."
+    ]
   },
   {
     title: "When will I get my investment back?",
     description: [
-      "The Common Stock (the 'Shares') of Eli Electric Vehicles, Inc. (the 'Company') are not publicly-traded. As a result, the shares cannot be easily traded or sold. As an investor in a private company, you typically look to receive a return on your investment under the following scenarios: The Company gets acquired by another company. The Company goes public (makes an initial public offering). In those instances, you receive your pro-rata share of the distributions that occur, in the case of acquisition, or you can sell your shares on an exchange. These are both considered long-term exits, taking approximately 5-10 years (and often longer) to see the possibility for an exit. It can sometimes take years to build companies. Sometimes there will not be any return, as a result of business failure.",
-    ],
+      "The Common Stock (the 'Shares') of Eli Electric Vehicles, Inc. (the 'Company') are not publicly-traded. As a result, the shares cannot be easily traded or sold. As an investor in a private company, you typically look to receive a return on your investment under the following scenarios: The Company gets acquired by another company. The Company goes public (makes an initial public offering). In those instances, you receive your pro-rata share of the distributions that occur, in the case of acquisition, or you can sell your shares on an exchange. These are both considered long-term exits, taking approximately 5-10 years (and often longer) to see the possibility for an exit. It can sometimes take years to build companies. Sometimes there will not be any return, as a result of business failure."
+    ]
   },
   {
     title: "Can I sell my shares?",
     description: [
       "Shares sold via Regulation Crowdfunding offerings have a one-year lockup period before those shares can be sold under certain conditions.",
-      "Exceptions to limitations on selling shares during the one-year lockup period:",
-      "In the event of death, divorce, or similar circumstance, shares can be transferred to:",
+      "Exceptions to limitations on selling shares during the one-year lockup period: In the event of death, divorce, or similar circumstance, shares can be transferred to:",
       "The company that issued the securities",
       "An accredited investor",
-      "A family member (child, stepchild, grandchild, parent, stepparent, grandparent, spouse or equivalent, sibling, mother-in-law, father-in-law, son-in-law, daughter-in-law, brother-in-law, or sister-in-law, including adoptive relationships)",
-    ],
+      "A family member (child, stepchild, grandchild, parent, stepparent, grandparent, spouse or equivalent, sibling, mother-in-law, father-in-law, son-in-law, daughter-in-law, brother-in-law, or sister-in-law, including adoptive relationships)"
+    ]
   },
   {
     title: "What happens if a company does not reach their funding target?",
     description: [
-      "If a company does not reach their minimum funding target, all funds will be returned to the investors after the close of the offering.",
-    ],
+      "If a company does not reach their minimum funding target, all funds will be returned to the investors after the close of the offering."
+    ]
   },
   {
     title: "How can I learn more about a company's offering?",
     description: [
-      "All available disclosure information can be found on the offering pages for our Regulation Crowdfunding offering.",
-    ],
+      "All available disclosure information can be found on the offering pages for our Regulation Crowdfunding offering."
+    ]
   },
   {
     title: "What if I change my mind about investing?",
     description: [
-      "You can cancel your investment at any time, for any reason, until 48 hours prior to a closing occurring. If you’ve already funded your investment and your funds are in escrow, your funds will be promptly refunded to you upon cancellation. To submit a request to cancel your investment please email: ir@eli.world",
-    ],
+      "You can cancel your investment at any time, for any reason, until 48 hours prior to a closing occurring. If you’ve already funded your investment and your funds are in escrow, your funds will be promptly refunded to you upon cancellation. To submit a request to cancel your investment please email: ir@eli.world"
+    ]
   },
   {
     title: "How do I keep up with how the company is doing?",
     description: [
-      "At a minimum, the company will be filing with the SEC and posting on its website an annual report, along with certified financial statements. Those should be available 120 days after the fiscal year end. If the company meets a reporting exception, or eventually has to file more reported information to the SEC, the reporting described above may end. If these reports end, you may not continually have current financial information about the company.",
-    ],
+      "At a minimum, the company will be filing with the SEC and posting on its website an annual report, along with certified financial statements. Those should be available 120 days after the fiscal year end. If the company meets a reporting exception, or eventually has to file more reported information to the SEC, the reporting described above may end. If these reports end, you may not continually have current financial information about the company."
+    ]
   },
   {
     title: "What relationship does the company have with DealMaker Securities?",
     description: [
-      "Once an offering ends, the company may continue its relationship with DealMaker Securities for additional offerings in the future. DealMaker Securities’ affiliates may also provide ongoing services to the company. There is no guarantee any services will continue after the offering ends.",
-    ],
-  },
+      "Once an offering ends, the company may continue its relationship with DealMaker Securities for additional offerings in the future. DealMaker Securities’ affiliates may also provide ongoing services to the company. There is no guarantee any services will continue after the offering ends."
+    ]
+  }
 ];

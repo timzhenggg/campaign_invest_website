@@ -1,37 +1,18 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
 import useCounter from '../../hooks/useCounter';
+import { useButtonsVisibility } from '../../context/useButtonsVisibility';
 
 const MarketShare: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
+  const { setShowButtonMobile } = useButtonsVisibility();
 
   const counter = useCounter(45, 2000, 30, isInView);
 
   useEffect(() => {
-    if (!ref.current) return;
-
-    const isIntersectedBefore = JSON.parse(sessionStorage.getItem('isIntersecting') || 'false');
-    if (isIntersectedBefore) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          sessionStorage.setItem('isIntersecting', 'true');
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+    setShowButtonMobile(isInView);
+  }, [isInView, setShowButtonMobile]);
 
     return (
       <div 

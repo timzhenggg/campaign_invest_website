@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CountdownTimer from '../CountdownTimer/CountdownTimer';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useButtonsVisibility } from '../../context/useButtonsVisibility';
 
 interface Props {
   isValidUser: boolean;
@@ -9,8 +10,10 @@ interface Props {
 const Header: React.FC<Props> = ({ isValidUser }) => {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const { showButtonDesktop } = useButtonsVisibility();
 
-  // Обробка напрямку скролу
+  console.log(showButtonDesktop)
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -32,7 +35,7 @@ const Header: React.FC<Props> = ({ isValidUser }) => {
 
       <div className='hidden md:block lg:absolute right-12 top-1/2 lg:-translate-y-1/2'>
         <AnimatePresence>
-          {isValidUser && isScrollingUp && (
+          {isValidUser && isScrollingUp && showButtonDesktop && (
             <motion.button
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}

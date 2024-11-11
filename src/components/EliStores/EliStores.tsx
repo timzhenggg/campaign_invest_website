@@ -1,34 +1,15 @@
 import { motion, useInView } from 'framer-motion';
 import React, { useRef, useEffect } from 'react';
+import { useButtonsVisibility } from '../../context/useButtonsVisibility';
 
 const EliStores: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true }); 
+  const { setShowButtonDesktop } = useButtonsVisibility();
 
   useEffect(() => {
-    if (!ref.current) return;
-
-    const isIntersectedBefore = JSON.parse(sessionStorage.getItem('isIntersecting2') || 'false');
-    if (isIntersectedBefore) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          sessionStorage.setItem('isIntersecting2', 'true');
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+    setShowButtonDesktop(isInView);
+  }, [isInView, setShowButtonDesktop]);
 
     return (
       <div

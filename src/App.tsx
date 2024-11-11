@@ -18,14 +18,14 @@ import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth";
 import TechStack from "./components/TechStackSection/TechStackSection";
 import Button from "./components/UI/Button/Button";
 import { emailValidator } from "./validators/emailValidator";
+import { ButtonVisibilityProvider, useButtonsVisibility } from "./context/useButtonsVisibility";
 
 export type Category = "A" | "B" | "C" | null;
 
 function App() {
   const [isValidUser, setIsValidUser] = useState(false);
   const [category, setCategory] = useState<Category>(null);
-  const [showButton, setShowButton] = useState(true);
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  const { showButtonMobile } = useButtonsVisibility();  
   
   const {
     register,
@@ -67,79 +67,58 @@ function App() {
     }
   }, [isValidUser, category]);
 
-  useEffect(() => {
-    let lastScrollTop = 0;
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-        setShowButton(false);
-      } else {
-        setShowButton(true);
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const isIntersecting = localStorage.getItem('isIntersecting') === 'true';
-    setIsIntersecting(isIntersecting);
-  }, []);
-
   const fadeInUp = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <div className="w-full h-full flex flex-col flex-1">
-      <Header isValidUser={isValidUser} />
+    <ButtonVisibilityProvider>
+      <div className="w-full h-full flex flex-col flex-1">
+        <Header isValidUser={isValidUser} />
 
-      <main className="pt-20 sm:pt-14 flex flex-col flex-1">
-        <HeroSection
-          name="email"
-          register={register}
-          errors={errors}
-          handleSubmit={handleSubmit(handleSubmitEmail)}
-          isValidUser={isValidUser}
-        />
+        <main className="pt-20 sm:pt-14 flex flex-col flex-1">
+          <HeroSection
+            name="email"
+            register={register}
+            errors={errors}
+            handleSubmit={handleSubmit(handleSubmitEmail)}
+            isValidUser={isValidUser}
+          />
 
-        {isValidUser && (
-          <div>
-            <BonusesSection category={category} />
-            <Logos />
-            <InternationalExpansionSection />
-            <SteadyGrowth />
-            <GrowthPotentialSection />
-            <CEOInsights />
-            <AutomotiveTechnology />
-            <TechStack />
-            <FAQs />
-            <Footer />
+          {isValidUser && (
+            <div>
+              <BonusesSection category={category} />
+              <Logos />
+              <InternationalExpansionSection />
+              <SteadyGrowth />
+              <GrowthPotentialSection />
+              <CEOInsights />
+              <AutomotiveTechnology />
+              <TechStack />
+              <FAQs />
+              <Footer />
 
-            {showButton && isIntersecting && (
-              <motion.div
-                className="md:hidden z-50 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center"
-                variants={fadeInUp}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Button className="relative w-[65%] px-14 text-lg uppercase font-extrabold overflow-hidden">
-                  <span className="ripple-effect ripple-effect-white"></span>
-                  Invest now
-                </Button>
-              </motion.div>
-            )}
-          </div>
-        )}
-      </main>
-    </div>
+              {showButtonMobile && (
+                <motion.div
+                  className="md:hidden z-50 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center"
+                  variants={fadeInUp}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Button className="relative w-[65%] px-14 text-lg uppercase font-extrabold overflow-hidden">
+                    <span className="ripple-effect ripple-effect-white"></span>
+                    Invest now
+                  </Button>
+                </motion.div>
+              )}
+            </div>
+          )}
+        </main>
+      </div>
+    </ButtonVisibilityProvider>
   );
 }
 
