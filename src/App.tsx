@@ -1,5 +1,6 @@
 import { joiResolver } from "@hookform/resolvers/joi";
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import data from "../users.json";
 import { scrollToSectionById } from "./assets/helpers/scrollToSectionById";
@@ -15,9 +16,8 @@ import InternationalExpansionSection from "./components/InternationalExpansionSe
 import Logos from "./components/Logos/Logos";
 import SteadyGrowth from "./components/SteadyGrowth/SteadyGrowth";
 import TechStack from "./components/TechStackSection/TechStackSection";
-import { emailValidator } from "./validators/emailValidator";
-import { motion } from "framer-motion";
 import Button from "./components/UI/Button/Button";
+import { emailValidator } from "./validators/emailValidator";
 
 export type Category = "A" | "B" | "C" | null;
 
