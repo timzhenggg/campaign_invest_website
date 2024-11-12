@@ -14,7 +14,7 @@ const Header: React.FC<Props> = ({ isValidUser }) => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const { showButtonDesktop } = useButtonsVisibility();
 
-  const handleLinkClick = (id) => {
+  const handleLinkClick = (id: string) => {
     scrollToSectionById(id);
   }
 
