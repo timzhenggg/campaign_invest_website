@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import CountdownTimer from '../CountdownTimer/CountdownTimer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useButtonsVisibility } from '../../context/useButtonsVisibility';
-import { div } from 'framer-motion/client';
 import { scrollToSectionById } from '../../assets/helpers/scrollToSectionById';
 
 interface Props {
