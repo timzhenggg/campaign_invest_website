@@ -1,5 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
+import React from 'react';
 import { Category } from '../../App';
 import InvestIntro from '../InvestIntro/InvestIntro';
 import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
@@ -51,14 +51,24 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
             <motion.div className='-mt-4' variants={fadeInUp}>
               <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
             </motion.div>
-            <motion.span
-              className='text-[#A4A4A4] text-sm sm:text-lg leading-[120%] text-center'
-              variants={fadeInUp}
-            >
-              “By regulation, bonus amount will NOT
-              be calculated on your investment page. It will be applied
-              AFTER your investment iscompleted and reflected int he number of shares issued and average cost per share, these info will be found in your Transfer Agent account.”
-            </motion.span>
+            <ul className='mt-4 w-full'>
+              <li className='text-primary-text-200 list-disc'>Existing Investors/ repeating investors will receive 10% bonus shares.</li>
+              <li className='text-primary-text-200 list-disc'>New investors subscribed to, or has shown interest in our previous round will receive 5% bonus shares.</li>
+              <li className='text-primary-text-200 list-disc'>Investors will also receive 10 bonus shares for investing within first 48 hours of this round.</li>
+              <li className='text-primary-text-200 list-disc'>Investors will also receive bonus shares based on their total investment amount.</li>
+            </ul>
+            <p className='-mt-3.5 -ml-3.5 text-primary-text-200'>*Bonus amount will NOT be calculated on your investment page, it will be applied AFTER your investment is completed, and reflected in the number of shares issued and average cost per share, these info will be found in your Transfer Agent account. </p>
+            <ul className='mt-1 flex justify-center items-center gap-8'>
+              <li className='text-white underline text-lg'>
+                <a href="">SEC Filings</a>
+              </li>
+              <li className='text-white underline text-lg'>
+                <a href="">Offering Circular</a>
+              </li>
+              <li className='text-white underline text-lg'>
+                <a href="">Investor Education</a>
+              </li>
+            </ul>
           </motion.div>
         </div>
       </MaxWidthContainer>

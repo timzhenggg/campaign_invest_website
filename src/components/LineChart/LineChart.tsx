@@ -70,7 +70,7 @@ const LineChart: React.FC = () => {
   };
 
   return (
-    <div className='relative w-full h-full flex justify-center items-center'>
+    <div className='relative w-full h-full min-h-[300px] flex justify-center items-center'>
       <Line
         style={{ minHeight: 180 }}
         ref={chartRef}

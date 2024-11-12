@@ -16,10 +16,7 @@ const BarChart: React.FC = () => {
       <span className='absolute z-10 left-[15%] xs:left-[17%] sm:left-28 md:left-32 bottom-[28%] sm:bottom-24 md:bottom-28 xl:right-[18%] text-white font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl'>${counter2}B</span>
       
       <div className='absolute left-0 top-0 hidden sm:flex flex-col items-start gap-8'>
-        <div className='flex flex-col text-white text-lg'>
-          <span>McKinsey</span>
-          <span className='ml-3 text-right'>&Company</span>
-        </div>
+        <img src="/mc-kinsey-logo.svg" alt="mc-kinsey logo" draggable={false} />
 
         <div
           style={{

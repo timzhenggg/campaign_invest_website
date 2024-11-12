@@ -90,7 +90,7 @@ const HeroSection = <T extends FieldValues>({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Limited-Time Extension Round <span className='hidden lg:block'>Period</span>
+                Limited-Time Extension Round
                 <span className='font-normal'>Last Chance to Invest at 2024 Terms</span>
               </motion.h1>
               <motion.p 
@@ -118,7 +118,7 @@ const HeroSection = <T extends FieldValues>({
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <label className='mt-4 sm:mt-8 flex flex-col items-center gap-4 text-base md:text-lg text-white'>
-                  Enter your email to access the investment page
+                  Enter Email to Check Eligible Bonus
                   <InputField
                     register={register}
                     errors={errors}

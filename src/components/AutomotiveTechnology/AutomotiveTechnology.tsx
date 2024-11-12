@@ -27,7 +27,7 @@ const AutomotiveTechnology: React.FC = () => {
             className='flex flex-col items-center gap-1'
           >
             <SectionHeading className='hidden sm:block font-bold text-center'>Best Micro-EV on the market</SectionHeading>
-            <h2 className={'text-3xl font-bold flex flex-col items-center text-center text-primary-text'}>
+            <h2 className={'flex sm:hidden text-3xl font-bold flex-col items-center text-center text-primary-text'}>
               <span>Best Micro-EV</span>
               <span>on the market</span>
             </h2>

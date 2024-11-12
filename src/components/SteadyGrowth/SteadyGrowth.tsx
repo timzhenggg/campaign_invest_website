@@ -21,26 +21,33 @@ const SteadyGrowth: React.FC = () => {
             <img className='w-full sm:rounded-b-[100px]' src="/steady-growth-bg.png" alt="steady growth" draggable={false} />
           </div>
 
-          <div className='flex flex-col sm:flex-row sm:grid grid-cols-2 xl:flex items-center gap-6'>
-            <div className='col-span-2 w-[90vw] sm:w-full bg-white h-full p-4 sm:p-6 rounded-2xl flex justify-center items-center' style={{ boxShadow: '0px 4px 8px 0px #0000001A' }}>
-              <LineChart />
+          <div className='flex flex-col gap-4'>
+            <div className='flex flex-col sm:flex-row sm:grid grid-cols-2 xl:flex items-center gap-6'>
+              <div className='col-span-2 w-full flex flex-col gap-4'>
+                <div className='col-span-2 w-[90vw] sm:w-full bg-white h-full min-h-[360px] p-4 sm:p-6 rounded-2xl flex justify-center items-center' style={{ boxShadow: '0px 4px 8px 0px #0000001A' }}>
+                  <LineChart />
+                </div>
+                <p className='xl:hidden text-primary-text text-lg text-center leading-[130%]'>*Eli’s Gross Margin and Year-over-Year Revenue growth data are from Company’s Audited Financials. </p>
+              </div>
+
+              <RevenueGrowth />
+
+              <div className='xl:max-w-[280px] w-full h-full flex flex-col gap-6'>
+                <RevenueStatsCard title={['Sales Revenue in 2023']}value={2.7}>
+                  <span className='text-primary-green text-5xl font-bold'>$</span>
+                  <span className="text-primary-green text-5xl font-bold counter"></span>
+                  <span className='text-primary-green text-5xl font-bold'>M</span>
+                </RevenueStatsCard>
+
+                <RevenueStatsCard title={['Reduction in BOM costs', 'over the last 24 months']} value={18}>
+                  <img src="/arrow-down-icon.svg" alt="arrow down" draggable={false} />
+                  <span className="text-primary-green text-5xl font-bold counter"></span>
+                  <span className='text-primary-green text-5xl font-bold'>+%</span>
+                </RevenueStatsCard>
+              </div>
             </div>
-
-            <RevenueGrowth />
-
-            <div className='xl:max-w-[280px] w-full h-full flex flex-col gap-6'>
-              <RevenueStatsCard title={['Sales Revenue in 2023']}value={2.7}>
-                <span className='text-primary-green text-5xl font-bold'>$</span>
-                <span className="text-primary-green text-5xl font-bold counter"></span>
-                <span className='text-primary-green text-5xl font-bold'>M</span>
-              </RevenueStatsCard>
-
-              <RevenueStatsCard title={['Reduction in BOM costs', 'over the last 24 months']} value={18}>
-                <img src="/arrow-down-icon.svg" alt="arrow down" draggable={false} />
-                <span className="text-primary-green text-5xl font-bold counter"></span>
-                <span className='text-primary-green text-5xl font-bold'>+%</span>
-              </RevenueStatsCard>
-            </div>
+            
+            <p className='hidden xl:block text-primary-text text-lg leading-[130%]'>*Eli’s Gross Margin and Year-over-Year Revenue growth data are from Company’s Audited Financials. </p>
           </div>
         </div>
       </MaxWidthContainer>

@@ -49,14 +49,12 @@ function App() {
       setCategory("C");
     }
 
-    setIsValidUser(email !== "" && category !== null);
+    setIsValidUser(category !== null);
   };
 
   const handleSubmitEmail = (data: { email: string }) => {
     const { email } = data;
-    if (email) {
-      checkUserCategory(email);
-    }
+    checkUserCategory(email);
   };
 
   useEffect(() => {

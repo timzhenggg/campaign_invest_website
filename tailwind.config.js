@@ -14,6 +14,7 @@ module.exports = {
         "primary-green": "#12E39C",
         "primary-text": "#4C4C4C",
         "primary-text-100": "#333333",
+        "primary-text-200": "#A4A4A4",
         "gray-100": "#BBBBBB",
         "gray-200": "#202020",
         "gray-300": "#4D4D4D",
