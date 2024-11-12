@@ -19,6 +19,7 @@ import TechStack from "./components/TechStackSection/TechStackSection";
 import Button from "./components/UI/Button/Button";
 import { useButtonsVisibility } from "./context/useButtonsVisibility";
 import { emailValidator } from "./validators/emailValidator";
+import DiscussionBoard from "./components/DiscussionBoard/DiscussionBoard";
 
 export type Category = "A" | "B" | "C" | null;
 
@@ -74,7 +75,7 @@ function App() {
       <div className="w-full h-full flex flex-col flex-1">
         <Header isValidUser={isValidUser} />
 
-        <main className="pt-20 sm:pt-14 flex flex-col flex-1">
+        <main className="pt-20 sm:pt-14">
           <HeroSection
             name="email"
             register={register}
@@ -94,6 +95,7 @@ function App() {
               <AutomotiveTechnology />
               <TechStack />
               <FAQs />
+              <DiscussionBoard />
               <Footer />
 
               {showButtonMobile && (
