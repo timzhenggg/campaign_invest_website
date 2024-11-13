@@ -12,7 +12,7 @@ const GrowthPotentialSection: React.FC = () => {
   
   const ref2 = useRef<HTMLDivElement>(null);
   const isInView2 = useInView(ref2, { once: true }); 
-  const counter2 = useCounter(25, 2000, 20, isInView2);
+  const counter2 = useCounter(40, 2000, 20, isInView2);
 
   return (
     <div id="steady-growth" className='py-14 bg-gray-200'>
@@ -60,7 +60,7 @@ const GrowthPotentialSection: React.FC = () => {
                 className='xl:max-w-[330px] px-5 py-4 bg-primary-text-100 rounded-[20px] flex flex-col items-center gap-2'
               >
                 <img src="/people.png" alt="map" draggable={false} />
-                <span className='text-primary-green text-center font-bold text-3xl md:text-4xl lg:text-5xl'>{counter2}%</span>
+                <span className='text-primary-green text-center font-bold text-3xl md:text-4xl lg:text-5xl'>{counter2}+%</span>
                 <span className='text-white text-center leading-[130%] flex flex-col'>Urban population by 2050 <span>(United Nations’ estimate)</span></span>
               </div>
             </div>

@@ -100,7 +100,7 @@ function App() {
 
               {showButtonMobile && (
                 <motion.div
-                  className="md:hidden z-50 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center"
+                  className="lg:hidden z-50 w-full fixed bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center"
                   variants={fadeInUp}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}

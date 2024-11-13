@@ -6,6 +6,7 @@ import MaxWidthContainer from '../MaxWidthContainer/MaxWidthContainer';
 import SeriesPrivateExtension from '../SeriesPrivateExtension/SeriesPrivateExtension';
 import Button from '../UI/Button/Button';
 import InputField from '../UI/InputField/InputField';
+import clsx from 'clsx';
 
 interface Props<T extends FieldValues> {
   name: Path<T>;
@@ -36,6 +37,27 @@ const HeroSection = <T extends FieldValues>({
     return () => clearInterval(intervalId);
   }, []);
 
+  const [daysRemaining, setDaysRemaining] = useState(0);
+  const targetDate = '2024-11-22T23:59:00-08:00';
+
+  useEffect(() => {
+    const calculateDaysRemaining = () => {
+      const currentDate = new Date();
+      const target = new Date(targetDate);
+      
+      const differenceInTime = target.getTime() - currentDate.getTime();
+      
+      const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+      setDaysRemaining(differenceInDays);
+    };
+
+    calculateDaysRemaining();
+
+    const intervalId = setInterval(calculateDaysRemaining, 1000 * 60 * 60 * 1);
+
+    return () => clearInterval(intervalId);
+  }, [targetDate]);
+
   return (
     <motion.section
       id='hero-section'
@@ -62,14 +84,14 @@ const HeroSection = <T extends FieldValues>({
         animate={{ scale: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        10 Days Only
+        {daysRemaining} Days Only
       </motion.div>
 
       <motion.img 
         src="/logo.svg" 
         alt="logo" 
         draggable={false} 
-        className="absolute w-16 sm:w-24 top-4 lg:top-6 left-4 md:left-6 lg:left-14" 
+        className="absolute w-16 sm:w-24 top-4 lg:top-6 left-4 md:left-6 lg:left-14 md:hidden" 
         initial={{ x: -50, opacity: 0 }} 
         animate={{ x: 0, opacity: 1 }} 
         transition={{ duration: 0.6 }} 
@@ -99,7 +121,7 @@ const HeroSection = <T extends FieldValues>({
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
               >
-                We received overwhelming interests from investors who either missed our 2024 round or want to increase their existing stake at the same terms. For 10 days only, we are offering a <span className='font-bold'>limited-timed, private extension round.</span>
+                We received overwhelming interests from investors who either missed our 2024 round or want to increase their existing stake at the same terms. For {daysRemaining} days only, we are offering a <span className='font-bold'>limited-timed, offering round.</span>
               </motion.p>
               <motion.p 
                 className='text-white text-center text-sm sm:text-xl md:text-2xl leading-[140%]'
@@ -123,12 +145,20 @@ const HeroSection = <T extends FieldValues>({
                     register={register}
                     errors={errors}
                     name={"email" as Path<T>}
-                    placeholder='Enter your Email address here'
+                    placeholder='Enter your email'
                     className='min-w-[375px] text-center border-b border-solid border-white/50'
                   />
                 </label>
               
-                {!isValidUser && <Button type='submit' className='uppercase'>Access Investment Page</Button>}
+                {!isValidUser ?
+                  <Button type='submit' className='uppercase'>Access Investment Page</Button> :
+                  <button
+                    className={clsx(
+                      'px-6 py-5 bg-primary-green/30 border-2 border-solid border-primary-green rounded-[100px] text-primary-green leading-[140%] font-extrabold transition-all duration-300',
+                    )}
+                  >
+                    Access Investment Page
+                  </button>}
               </motion.form>
             </motion.div>
 
@@ -138,7 +168,7 @@ const HeroSection = <T extends FieldValues>({
               animate={{ scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              10 Days Only
+              {daysRemaining} Days Only
             </motion.div>
 
             <motion.div 

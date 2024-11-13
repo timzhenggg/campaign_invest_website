@@ -27,7 +27,7 @@ const SteadyGrowth: React.FC = () => {
                 <div className='col-span-2 w-[90vw] sm:w-full bg-white h-full min-h-[360px] p-4 sm:p-6 rounded-2xl flex justify-center items-center' style={{ boxShadow: '0px 4px 8px 0px #0000001A' }}>
                   <LineChart />
                 </div>
-                <p className='xl:hidden text-primary-text text-lg text-center leading-[130%]'>*Eli’s Gross Margin and Year-over-Year Revenue growth data are from Company’s Audited Financials. </p>
+                <p className='xl:hidden text-primary-text text text-sm text-center leading-[130%]'>*Eli’s Gross Margin and Year-over-Year Revenue growth data are from Company’s Audited Financials. </p>
               </div>
 
               <RevenueGrowth />

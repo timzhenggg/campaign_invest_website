@@ -58,7 +58,7 @@ const StatsCard: React.FC<Props> = ({
     }
   }, [isVisible, targetValue]);
 
-  const formattedValue = new Intl.NumberFormat('de-DE', {
+  const formattedValue = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(displayValue);
@@ -69,7 +69,7 @@ const StatsCard: React.FC<Props> = ({
       <span className='text-white text-lg sm:text-xl md:text-2xl font-bold'>
         {textBeforeValue}{formattedValue}{textAfterValue}
       </span>
-      <p className='text-white/50 text-sm sm:text-base'>{description}</p>
+      <p className='text-white/50 text-sm sm:text-base'>{description}{description.startsWith("Min") && <sup>*</sup>}</p>
     </div>
   );
 };

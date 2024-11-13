@@ -191,7 +191,7 @@ export const faq3 = [
   {
     title: "What if I change my mind about investing?",
     description: [
-      "You can cancel your investment at any time, for any reason, until 48 hours prior to a closing occurring. If you’ve already funded your investment and your funds are in escrow, your funds will be promptly refunded to you upon cancellation. To submit a request to cancel your investment please email: ir@eli.world"
+      "You can cancel your investment at any time, for any reason, until 48 hours prior to a closing occurring. If you’ve already funded your investment and your funds are in escrow, your funds will be promptly refunded to you upon cancellation. To submit a request to cancel your investment please email: info@dealmakersecurities.com"
     ]
   },
   {
