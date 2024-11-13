@@ -13,6 +13,6 @@ To manage access permissions for the investment page, you can edit the `users.js
 ### Steps to Update Access
 1. Open the `users.json` in root directory
 2. Locate the user entry you'd like to update.
-3. Modify the necessary fields, such as access level, permissions, or any other relevant information.
+3. Modify the necessary categories with users.
 
-These changes will take effect immediately upon the next application build or reload.
+These changes will take effect immediately upon the next application build or reload. 
