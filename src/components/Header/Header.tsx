@@ -1,19 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
-import CountdownTimer from '../CountdownTimer/CountdownTimer';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useButtonsVisibility } from '../../context/useButtonsVisibility';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 import { scrollToSectionById } from '../../assets/helpers/scrollToSectionById';
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import CountdownTimer from '../CountdownTimer/CountdownTimer';
 
 interface Props {
   isValidUser: boolean;
 }
 
 const Header: React.FC<Props> = ({ isValidUser }) => {
-  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  // const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const { showButtonDesktop } = useButtonsVisibility();
+  // const { showButtonDesktop } = useButtonsVisibility();
   const headerRef = useRef<HTMLDivElement>(null);
   
   const toggleMenu = () => {
@@ -27,7 +25,7 @@ const Header: React.FC<Props> = ({ isValidUser }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      setIsScrollingUp(scrollTop < lastScrollTop);
+      // setIsScrollingUp(scrollTop < lastScrollTop);
       setLastScrollTop(scrollTop);
     };
 
