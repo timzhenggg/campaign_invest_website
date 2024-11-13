@@ -107,10 +107,12 @@ function App() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Button className="relative w-[65%] px-14 text-lg uppercase font-extrabold overflow-hidden">
-                    <span className="ripple-effect ripple-effect-white"></span>
-                    Invest now
-                  </Button>
+                  <a href="https://eli-electric.app.dealmaker.tech/invitations/bb304fda-759d-4280-95e0-9cf79e2ef97e/view" target="_blank">
+                    <Button className="relative w-[65%] px-14 text-lg uppercase font-extrabold overflow-hidden">
+                      <span className="ripple-effect ripple-effect-white"></span>
+                      Invest now
+                    </Button>
+                  </a>
                 </motion.div>
               )}
             </div>

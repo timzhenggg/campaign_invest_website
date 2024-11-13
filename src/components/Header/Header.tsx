@@ -141,16 +141,18 @@ const Header: React.FC<Props> = ({ isValidUser }) => {
                   FAQ
                 </motion.li>
               </ul>
-              <motion.button
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className="relative py-2 px-4 rounded-full bg-white text-primary-green text-xl uppercase font-bold overflow-hidden ripple-effect-btn"
-              >
-                Invest now
-                <div className="ripple-effect ripple-effect-green absolute inset-0 rounded-full"></div>
-              </motion.button>
+              <a href="https://eli-electric.app.dealmaker.tech/invitations/bb304fda-759d-4280-95e0-9cf79e2ef97e/view" target='_blank'>
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  className="relative py-2 px-4 rounded-full bg-white text-primary-green text-xl uppercase font-bold overflow-hidden ripple-effect-btn"
+                >
+                  Invest now
+                  <div className="ripple-effect ripple-effect-green absolute inset-0 rounded-full"></div>
+                </motion.button>
+              </a>
             </div>
           )}
         </AnimatePresence>
