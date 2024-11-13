@@ -61,7 +61,7 @@ const GrowthPotentialSection: React.FC = () => {
               >
                 <img src="/people.png" alt="map" draggable={false} />
                 <span className='text-primary-green text-center font-bold text-3xl md:text-4xl lg:text-5xl'>{counter2}+%</span>
-                <span className='text-white text-center leading-[130%] flex flex-col'>Urban population by 2050 <span>(United Nations’ estimate)</span></span>
+                <span className='text-white text-center leading-[130%] flex flex-col'>Urban population growth by 2050 <span>(United Nations’ estimate)</span></span>
               </div>
             </div>
           </div>
