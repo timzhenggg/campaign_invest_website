@@ -52,7 +52,7 @@ const BonusesSection: React.FC<Props> = ({ category }) => {
             <motion.div className='-mt-4' variants={fadeInUp}>
               <Button className='my-4 px-14 text-3xl uppercase font-extrabold'>Invest now</Button>
             </motion.div>
-            <ul className='ml-8 mr-8 lg:ml-0 mt-4 w-full'>
+            <ul className='pl-8 mr-8 lg:ml-0 mt-4 w-full'>
               <li className='text-primary-text-200 list-disc'>Existing Investors/ repeating investors will receive 10% bonus shares.</li>
               <li className='text-primary-text-200 list-disc'>New investors subscribed to, or has shown interest in our previous round will receive 5% bonus shares.</li>
               <li className='text-primary-text-200 list-disc'>Investors will also receive 10 bonus shares for investing within first 48 hours of this round.</li>
